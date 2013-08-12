@@ -8,21 +8,25 @@
 
 # Build results
 
-[Dd]ebug/
-[Rr]elease/
+[Dd]ebug/*
+[Rr]elease/*
 x64/
 build/
-[Bb]in/
-[Oo]bj/
+#[Bb]ench/[Bb]in/*
+[Bb]ench/[Bb]in/[Dd]ebug/*.*
+[Bb]ench/[Bb]in/[Rr]elease/*.*
+
+
+[Bb]ench/[Oo]bj/*
 
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
 !packages/*/build/
 
 #Enable folders under debug and release that contain html files and "starter" data files
-![Dd]ebug/[Aa]bout/
-![Dd]ebug/[Uu]ser[Dd]ata/
-![Rr]elease/[Aa]bout/
-![Rr]elease/[Uu]ser[Dd]ata/
+![Bb]ench/[Bb]in/[Dd]ebug/[Aa]bout/*
+![Bb]ench/[Bb]in/[Dd]ebug/[Uu]ser[Dd]ata/*
+![Bb]ench/[Bb]in/[Rr]elease/[Aa]bout/*
+![Bb]ench/[Bb]in/[Rr]elease/[Uu]ser[Dd]ata/*
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
