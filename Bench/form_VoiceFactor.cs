@@ -21,12 +21,21 @@ namespace Bench
         //http://speechrecognitionblog.blogspot.com/2012/05/audio-recording-and-playback-in-c-net.html
 
         private SpeechRecognizer recognizer = null; //new SpeechRecognizer();
+        private form_AudioManager audioForm = null;
+        //private form_SystemUser systemuserForm = null;
+        private string sessionfilename = "";
+
+        private Boolean recognizerstartedlistening = false;
 
         public Double voicescore = Double.NaN;
 
-        public form_ATTVoiceFactor()
+        public form_ATTVoiceFactor(form_AudioManager parmf, string parmsessionfilename)
         {
             InitializeComponent();
+
+            audioForm = parmf;
+            //systemuserForm = parms;
+            sessionfilename = parmsessionfilename;
         }
 
         public Panel childpanel()
@@ -68,6 +77,7 @@ namespace Bench
         {
             tb_Recognized.Text = "";
             tb_Hidden.Text = "";
+            recognizerstartedlistening = false;
 
             if (cb_SpeechRecognitionEnabled.Checked)
             {
@@ -86,6 +96,9 @@ namespace Bench
         private void stop()
         {
             timer1.Enabled = false;
+
+            audioForm.StopRecording();
+
             tb_Hidden.Text = "";
             // tb_Recognized.Text = "";
             btn_Start.Text = "Start";
@@ -142,10 +155,20 @@ namespace Bench
                     if (recognizer.AudioState == AudioState.Silence)
                     {
                         rbSilence.Checked = true;
+                        if (recognizerstartedlistening == false)
+                        {
+                            audioForm.StartRecording(sessionfilename);
+                            recognizerstartedlistening = true;
+                        }
                     }
                     if (recognizer.AudioState == AudioState.Speech)
                     {
                         rbSpeech.Checked = true;
+                        if (recognizerstartedlistening == false)
+                        {
+                            audioForm.StartRecording(sessionfilename);
+                            recognizerstartedlistening = true;
+                        }
                     }
                     if (recognizer.AudioState == AudioState.Stopped)
                     {

@@ -78,9 +78,9 @@
             this.cb_SpeechRecognitionEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_SpeechRecognitionEnabled.Location = new System.Drawing.Point(6, 21);
             this.cb_SpeechRecognitionEnabled.Name = "cb_SpeechRecognitionEnabled";
-            this.cb_SpeechRecognitionEnabled.Size = new System.Drawing.Size(155, 21);
+            this.cb_SpeechRecognitionEnabled.Size = new System.Drawing.Size(79, 21);
             this.cb_SpeechRecognitionEnabled.TabIndex = 9;
-            this.cb_SpeechRecognitionEnabled.Text = "Text Recog Enabled";
+            this.cb_SpeechRecognitionEnabled.Text = "Enabled";
             this.cb_SpeechRecognitionEnabled.UseVisualStyleBackColor = true;
             this.cb_SpeechRecognitionEnabled.CheckedChanged += new System.EventHandler(this.cb_SpeechRecognitionEnabled_CheckedChanged);
             // 
@@ -131,17 +131,17 @@
             this.groupBox1.Controls.Add(this.rbSpeech);
             this.groupBox1.Controls.Add(this.rbSilence);
             this.groupBox1.Controls.Add(this.cb_SpeechRecognitionEnabled);
-            this.groupBox1.Location = new System.Drawing.Point(305, 8);
+            this.groupBox1.Location = new System.Drawing.Point(387, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(422, 47);
+            this.groupBox1.Size = new System.Drawing.Size(340, 47);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "AudioState";
+            this.groupBox1.Text = "Speech to Text";
             // 
             // rbStopped
             // 
             this.rbStopped.AutoSize = true;
-            this.rbStopped.Location = new System.Drawing.Point(337, 20);
+            this.rbStopped.Location = new System.Drawing.Point(256, 20);
             this.rbStopped.Name = "rbStopped";
             this.rbStopped.Size = new System.Drawing.Size(79, 21);
             this.rbStopped.TabIndex = 2;
@@ -152,7 +152,7 @@
             // rbSpeech
             // 
             this.rbSpeech.AutoSize = true;
-            this.rbSpeech.Location = new System.Drawing.Point(257, 20);
+            this.rbSpeech.Location = new System.Drawing.Point(176, 20);
             this.rbSpeech.Name = "rbSpeech";
             this.rbSpeech.Size = new System.Drawing.Size(74, 21);
             this.rbSpeech.TabIndex = 1;
@@ -163,7 +163,7 @@
             // rbSilence
             // 
             this.rbSilence.AutoSize = true;
-            this.rbSilence.Location = new System.Drawing.Point(179, 20);
+            this.rbSilence.Location = new System.Drawing.Point(98, 20);
             this.rbSilence.Name = "rbSilence";
             this.rbSilence.Size = new System.Drawing.Size(72, 21);
             this.rbSilence.TabIndex = 0;

@@ -14,14 +14,16 @@ namespace Bench
     {
 
         private formCAMture cameraForm = null;
+        private string sessionfilename = "";
 
         public Double facescore = Double.NaN;
 
-        public form_ATTFace(formCAMture parmf)
+        public form_ATTFace(formCAMture parmf, string parmsessionfilename)
         {
             InitializeComponent();
 
             this.cameraForm = parmf;
+            sessionfilename = parmsessionfilename;
         }
 
         public void setCameraForm(formCAMture parmf)
@@ -53,6 +55,7 @@ namespace Bench
             if (cameraForm != null)
             {
                 this.pictureBox1.Image = cameraForm.picture().Image;
+                this.pictureBox1.Image.Save(sessionfilename + ".attface.bmp");
             }
             timer1.Enabled = true;
         }

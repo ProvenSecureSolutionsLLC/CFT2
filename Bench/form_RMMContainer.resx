@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="textBox_Script.Text" xml:space="preserve">
+    <value>clear &lt;- function() {rm(list=ls())}
+clear()
+
+library("mnormt")
+
+calc.bf &lt;- function(mean, std, score, prior, evid, postf) {
+  # Calculates a new posterior distribution
+  # arguments
+  #   g     - genuine
+  #   i     - impostor
+  #   mean  - associative list with indices g,i , contains parameters for genuine/imposter dist
+  #   std   - associative list with indices g,i , contains parameters for genuine/imposter dist
+  #   prior - associative list with indices g,i , we currently assume a constant/uniform prior
+  #   evid  - associative list with indices g,i
+  #   postf - function that calculates the posterior given the mean, std, score, evid, and prior
+  # returns an associative list with indices bf and post
+  #   bf - calculated bayes factor
+  #   post - associative list containing new posteriors for genuine and impostors
+  
+  post &lt;- (list(
+    g=postf(mean$g,std$g,score,evid$g,prior$g),
+    i=postf(mean$i,std$i,score,evid$i,prior$i)))
+  bf &lt;- (post$g/post$i)
+  
+  res &lt;- list(bf=bf,post=post)
+  return(res)
+}
+
+decide.bf &lt;- function(bf) {
+  if (bf &gt; 10) { return("PASS") } 
+  else if (bf &lt; 0.10) { return("FAIL") } 
+  else { return("UNSURE") }
+}
+
+check &lt;- function(user, score, mean, std, prior, evid, a, postf) {
+  # auth_decider is a function that returns the next authenticator to try
+  # postf is the function we'll be using to calculate the posterior
+  #a &lt;- 1
+  decision &lt;- "UNSURE"
+  #removed While Loop
+    ans &lt;- calc.bf(mean[[a]],std[[a]],score[[a]],prior,evid,postf)
+    decision &lt;- decide.bf(ans$bf)
+    print(paste(user, ", auth#", a, ":", decision,",","BF =",ans$bf,sep=" "))
+    #if (decision == "UNSURE") { 
+     # a     &lt;- auth.decider(a) # choose a new authenticator somehow
+     # prior &lt;- ans$post        # and set the posterior as the new prior
+    #} 
+  }
+
+
+check2 &lt;- function(user, score, mean, std, evid, auth.decider, postf) {
+  fn &lt;- "899uliytre5w4e6r78t9cnzscxhvvfd.txt"
+  if (file.exists(fn)) {
+    history &lt;- as.list(read.table(fn))
+    print(history[1])
+    file.remove(fn)
+    prior &lt;- list(g=as.numeric(history[2]),
+                  i=as.numeric(history[3]))
+    a &lt;- (as.numeric(history[1]) + 1)
+  } else {
+    prior &lt;- list(g=1,i=1)
+    a &lt;- 1
+  }
+  print(a)
+  ans &lt;- calc.bf(mean[[a]],std[[a]],score,prior,evid,postf)
+  decision &lt;- decide.bf(ans$bf)
+  print(paste(user, ", auth#", a, ":", decision,",","BF =",ans$bf,sep=" "))
+  if (decision == "UNSURE") {
+    write(c(a,ans$post$g,ans$post$i),file=fn)
+    print("file written!")
+  }
+}
+
+calc.mvn.bf &lt;- function(score,mu,sigma) {
+  cov &lt;- list(
+    g=sigma$g[1:length(score),1:length(score)],
+    i=sigma$i[1:length(score),1:length(score)])
+  mean &lt;- list(
+    g=mu$g[1:length(score)],
+    i=mu$i[1:length(score)])
+  
+  post &lt;- list(
+    g=dmnorm(score,mean$g,(cov$g)%*%(cov$g)),
+    i=dmnorm(score,mean$i,(cov$i)%*%(cov$i)))
+  bf &lt;- (post$g/post$i)
+  res &lt;- list(bf=bf,post=post)
+  return(res)
+}
+
+checkmv &lt;- function(user, score, mean, sigma, auth.decider) {
+  a &lt;- 1
+  i &lt;- 1
+  decision &lt;- "UNSURE"
+  while (decision == "UNSURE") {
+    ans &lt;- calc.mvn.bf(score[1:i],mean,sigma)
+    decision &lt;- decide.bf(ans$bf)
+    print(paste(user,", auth#",a,":",decision,",","BF =",ans$bf,sep=" "))
+    if (decision == "UNSURE") {
+      a &lt;- auth.decider(a)
+    }
+    i &lt;- i+1
+  }
+}
+
+############################ demo ############################
+cat("\014") 
+clear()
+#naive.auth.decider &lt;- function(a) {return(a+1)}
+normal.postf &lt;- function(mean,std,score,evid,prior) {((1/(sqrt(2*pi)*std))*exp((-1/2)*(((score-mean)/std)^2)/evid)*prior)}
+
+# Tom's scores for various authenticators
+score &lt;- c(1.03,1.04,1.01)
+
+# Tom's genuine/imposter (normal) distribution parameters
+mean  &lt;- list(list(g=1.01,i=-1.01),
+              list(g=0.98,i=-0.98),
+              list(g=1,   i=-1))
+std   &lt;- list(list(g=0.75,i=1),
+              list(g=2,   i=3),
+              list(g=0.3, i=0.7))
+
+# initial conditions for Tom
+prior &lt;- list(g=1,i=1)
+evid  &lt;- list(g=1,i=1)
+
+# Does Tom pass?
+a &lt;- 1
+check("Tom",score,mean,std,prior,evid,a,normal.postf)
+#check2("Tom",score,mean,std,evid,naive.auth.decider,normal.postf) #Need to make sure prior file is available for check2 function to find.
+
+# Dick's scores for various authenticators
+score &lt;- c(0.1,0.7,1.01)
+
+# Dick's genuine/imposter (normal) distribution parameters
+mean  &lt;- list(list(g=1.01,i=-1.01),
+              list(g=0.98,i=-0.98),
+              list(g=1,   i=-1))
+std   &lt;- list(list(g=0.75,i=1),
+              list(g=2,   i=3),
+              list(g=0.3, i=0.7))
+
+# initial conditions for Dick
+prior &lt;- list(g=1,i=1)
+evid  &lt;- list(g=1,i=1)
+
+# Does Dick pass?
+a &lt;- 1
+check("Dick",score,mean,std,prior,evid,a,normal.postf)
+
+a &lt;- 2
+check("Dick",score,mean,std,prior,evid,a,normal.postf)
+
+# We should get the same results using check2
+#check2("Dick",0.1,mean,std,evid,naive.auth.decider,normal.postf)
+#check2("Dick",0.7,mean,std,evid,naive.auth.decider,normal.postf)
+#check2("Dick",1.01,mean,std,evid,naive.auth.decider,normal.postf)
+
+# Harry's scores for various authenticators
+score &lt;- c(-1.2,1.04,1.01)
+
+# Harry's genuine/imposter (normal) distribution parameters
+mean  &lt;- list(list(g=1.01,i=-1.01),
+              list(g=0.98,i=-0.98),
+              list(g=1,   i=-1))
+std   &lt;- list(list(g=0.75,i=1),
+              list(g=2,   i=3),
+              list(g=0.3, i=0.7))
+
+# initial conditions for Harry
+prior &lt;- list(g=1,i=1)
+evid  &lt;- list(g=1,i=1)
+
+# Does Harry pass?
+check("Harry",score,mean,std,prior,evid,naive.auth.decider,normal.postf)
+
+
+# John's scores for various samples for authenticators
+score &lt;- c(0.5,0.5,0.5)
+#score &lt;- c(0.7,0.5,0.3)
+#score &lt;- c(0.3,0.5,0.7)
+
+# John's genuine/imposter (normal) distribution parameters
+mean  &lt;- list(g=c(1,1,1),
+              i=c(-1,-1,-1))
+std   &lt;- list(g=c(0.8,0.8,0.8),
+              i=c(0.8,0.8,0.8))
+sigma &lt;- list(
+            g=matrix(c(0.8,0.05,0.1,0.05,0.8,0.05,0.1,0.05,0.8),3,3),
+            i=matrix(c(0.8,0.05,0.1,0.05,0.8,0.05,0.1,0.05,0.8),3,3))
+# Does John pass?
+checkmv("John",score,mean,sigma,naive.auth.decider)</value>
+  </data>
+</root>

@@ -18,17 +18,24 @@ namespace Bench
         private formCAMture cameraForm = null;
         private formCVSSDevices riskForm = null;
         private form_AuthFactorSettings authfactorForm = null;
+        private form_AudioManager audioForm = null;
 
-        public form_Settings_Container(formCAMture parmf)
+        public form_Settings_Container(formCAMture parmf, form_AudioManager parma)
         {
             InitializeComponent();
             savecolor = this.panel_cameraSetup.BackColor;
             cameraForm = parmf;
+            audioForm = parma;
         }
 
         public void setCameraForm(formCAMture parmf)
         {
             cameraForm = parmf;
+        }
+
+        public void setAudioForm(form_AudioManager parma)
+        {
+            audioForm = parma;
         }
 
         public Panel form_Settings_childbody()
@@ -40,6 +47,7 @@ namespace Bench
         private void resetPanels()
         {
             this.panel_cameraSetup.BackColor = savecolor;
+            this.panel_audioSetup.BackColor = savecolor;
 
             this.panel_risk_Devices.BackColor = savecolor;
             //this.panel_risk_Locations.BackColor = savecolor;
@@ -53,6 +61,7 @@ namespace Bench
             this.panel_service_knowledge.BackColor = savecolor;
             this.panel_service_ATTFace.BackColor = savecolor;
             this.panel_service_SMS.BackColor = savecolor;
+            
         }
 
         private void hoverpanel(Panel p)
@@ -100,6 +109,16 @@ namespace Bench
                 }
                 this.panelSettingsContainer.Controls.Clear();
                 this.panelSettingsContainer.Controls.Add(cameraForm.clientbody());
+            }
+
+            if (p.Name == "panel_audioSetup")
+            {
+                if (audioForm == null)
+                {
+                    audioForm = new form_AudioManager();
+                }
+                this.panelSettingsContainer.Controls.Clear();
+                this.panelSettingsContainer.Controls.Add(audioForm.clientpanel());
             }
 
             if (p.Name == "panel_risk_Devices")

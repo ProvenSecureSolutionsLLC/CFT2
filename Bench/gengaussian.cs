@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProvenSecure_DARPA_CFT_2013
+namespace Bench
 {
-    // this is not working to my satisfaction
     class gengaussian
     {
         private static bool uselast = true;
@@ -40,10 +39,13 @@ namespace ProvenSecure_DARPA_CFT_2013
 
         public static double BoxMuller(double mean, double standard_deviation, double low, double high)
         {
-            double retval = double.NaN;
-//            int breaker = 0;
-            
-            retval = mean + BoxMuller() * standard_deviation;
+            double retval = 0.00;// double.NaN;
+            int breaker = 0;
+            while ((breaker < 1000) && ((retval < low) || (retval > high)))
+            {
+                retval = mean + BoxMuller() * standard_deviation;
+                breaker++;
+            }
 
             return retval;
         }
