@@ -28,7 +28,7 @@ namespace Bench
             user = "Default";
             startdatetime = DateTime.Now;
             enddatetime = DateTime.Now;
-            character = "Blank";
+            character = "Actual";
             password_score = Double.NaN;
             attvoice_score1 = Double.NaN;
             attvoice_score2 = Double.NaN;
@@ -41,8 +41,42 @@ namespace Bench
             betaface_score3 = Double.NaN;
             knowledge_score = Double.NaN;
             sms_score = Double.NaN;
+            sessionfilename = this.filename();
+
 
         }
+
+        public class_rawauthsession(string parmuser)
+        {
+            if (parmuser.Trim() == "")
+            {
+                this.user = "Default";
+            }
+            else
+            {
+                this.user = parmuser;
+            }
+
+            startdatetime = DateTime.Now;
+            enddatetime = DateTime.Now;
+            character = "Actual";
+            password_score = Double.NaN;
+            attvoice_score1 = Double.NaN;
+            attvoice_score2 = Double.NaN;
+            attvoice_score3 = Double.NaN;
+            attface_score1 = Double.NaN;
+            attface_score2 = Double.NaN;
+            attface_score3 = Double.NaN;
+            betaface_score1 = Double.NaN;
+            betaface_score2 = Double.NaN;
+            betaface_score3 = Double.NaN;
+            knowledge_score = Double.NaN;
+            sms_score = Double.NaN;
+            sessionfilename = this.filename();
+
+        }
+
+        public string sessionfilename { get; set; }
 
         // User + StartDateTime for a session IS a "guid"... haha it is "guid-enough" for our purposes
         public string user { get; set; }
@@ -218,6 +252,8 @@ namespace Bench
 
             retval = basedir + "\\UserData\\" + this.user + "\\" + retval + ".session";
 
+            sessionfilename = retval;
+
             return retval;
         }
 
@@ -265,9 +301,15 @@ namespace Bench
         {
             Boolean retval = true;
 
+            // I know, a little weird, just Once set, don't set it again
+            if (sessionfilename == "")
+            {
+                sessionfilename = this.filename();
+            }
+
             try
             {
-                System.IO.StreamWriter sw = new System.IO.StreamWriter(this.filename());
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(sessionfilename);
                 sw.Write(this.savetostring());
                 sw.Close();
             }

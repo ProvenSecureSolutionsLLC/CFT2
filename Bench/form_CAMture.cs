@@ -284,7 +284,17 @@ namespace Bench
             listView1.Clear();
             string[] part1 = null, part2 = null, part3 = null;
 
-            string p = "c:\\vs2013\\";
+            // string p = "c:\\vs2013\\";
+
+            System.Reflection.Assembly a = System.Reflection.Assembly.GetEntryAssembly();
+            string basedir = System.IO.Path.GetDirectoryName(a.Location);
+
+            string p = basedir + "\\ImageLib";
+
+            if (!System.IO.Directory.Exists(p))
+            {
+                System.IO.Directory.CreateDirectory(p);
+            }
 
             part1 = Directory.GetFiles(p, "*.jpg");
             part2 = Directory.GetFiles(p, "*.jpeg");

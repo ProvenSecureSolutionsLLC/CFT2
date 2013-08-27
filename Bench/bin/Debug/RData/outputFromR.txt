@@ -1,0 +1,4 @@
+> clear <- function() {rm(list=ls())}
+> clear()
+> 
+> library("mnormt")

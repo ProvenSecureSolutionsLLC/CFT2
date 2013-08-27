@@ -51,6 +51,8 @@
             this.ll_risk_devices = new System.Windows.Forms.LinkLabel();
             this.panel_cameraSetup = new System.Windows.Forms.Panel();
             this.ll_Camera = new System.Windows.Forms.LinkLabel();
+            this.panel_audioSetup = new System.Windows.Forms.Panel();
+            this.ll_Audio = new System.Windows.Forms.LinkLabel();
             this.panel_ChildBody.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_service_SMS.SuspendLayout();
@@ -61,6 +63,7 @@
             this.panel_service_ATTVoice.SuspendLayout();
             this.panel_risk_Devices.SuspendLayout();
             this.panel_cameraSetup.SuspendLayout();
+            this.panel_audioSetup.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_ChildBody
@@ -85,6 +88,7 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.panel_audioSetup);
             this.panel1.Controls.Add(this.panel_service_SMS);
             this.panel1.Controls.Add(this.panel_service_password);
             this.panel1.Controls.Add(this.label13);
@@ -108,7 +112,7 @@
             // 
             this.panel_service_SMS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.panel_service_SMS.Controls.Add(this.ll_service_SMS);
-            this.panel_service_SMS.Location = new System.Drawing.Point(28, 410);
+            this.panel_service_SMS.Location = new System.Drawing.Point(28, 441);
             this.panel_service_SMS.Margin = new System.Windows.Forms.Padding(5);
             this.panel_service_SMS.Name = "panel_service_SMS";
             this.panel_service_SMS.Size = new System.Drawing.Size(118, 34);
@@ -134,7 +138,7 @@
             // 
             this.panel_service_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.panel_service_password.Controls.Add(this.ll_password);
-            this.panel_service_password.Location = new System.Drawing.Point(28, 225);
+            this.panel_service_password.Location = new System.Drawing.Point(28, 256);
             this.panel_service_password.Margin = new System.Windows.Forms.Padding(5);
             this.panel_service_password.Name = "panel_service_password";
             this.panel_service_password.Size = new System.Drawing.Size(118, 34);
@@ -159,7 +163,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(8, 203);
+            this.label13.Location = new System.Drawing.Point(8, 234);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(95, 17);
             this.label13.TabIndex = 22;
@@ -168,7 +172,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 121);
+            this.label11.Location = new System.Drawing.Point(8, 152);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(118, 17);
             this.label11.TabIndex = 20;
@@ -185,7 +189,7 @@
             // 
             // panel_settings_spacer
             // 
-            this.panel_settings_spacer.Location = new System.Drawing.Point(28, 456);
+            this.panel_settings_spacer.Location = new System.Drawing.Point(28, 487);
             this.panel_settings_spacer.Name = "panel_settings_spacer";
             this.panel_settings_spacer.Size = new System.Drawing.Size(118, 38);
             this.panel_settings_spacer.TabIndex = 19;
@@ -194,7 +198,7 @@
             // 
             this.panel_service_ATTFace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.panel_service_ATTFace.Controls.Add(this.linkLabel1);
-            this.panel_service_ATTFace.Location = new System.Drawing.Point(28, 336);
+            this.panel_service_ATTFace.Location = new System.Drawing.Point(28, 367);
             this.panel_service_ATTFace.Margin = new System.Windows.Forms.Padding(5);
             this.panel_service_ATTFace.Name = "panel_service_ATTFace";
             this.panel_service_ATTFace.Size = new System.Drawing.Size(118, 34);
@@ -221,7 +225,7 @@
             // 
             this.panel_service_Betaface.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.panel_service_Betaface.Controls.Add(this.ll_service_betaface);
-            this.panel_service_Betaface.Location = new System.Drawing.Point(28, 373);
+            this.panel_service_Betaface.Location = new System.Drawing.Point(28, 404);
             this.panel_service_Betaface.Margin = new System.Windows.Forms.Padding(5);
             this.panel_service_Betaface.Name = "panel_service_Betaface";
             this.panel_service_Betaface.Size = new System.Drawing.Size(118, 34);
@@ -248,7 +252,7 @@
             // 
             this.panel_service_knowledge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.panel_service_knowledge.Controls.Add(this.ll_service_knowledge);
-            this.panel_service_knowledge.Location = new System.Drawing.Point(28, 262);
+            this.panel_service_knowledge.Location = new System.Drawing.Point(28, 293);
             this.panel_service_knowledge.Margin = new System.Windows.Forms.Padding(5);
             this.panel_service_knowledge.Name = "panel_service_knowledge";
             this.panel_service_knowledge.Size = new System.Drawing.Size(118, 34);
@@ -275,7 +279,7 @@
             // 
             this.panel_service_ATTVoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.panel_service_ATTVoice.Controls.Add(this.ll_service_attvoice);
-            this.panel_service_ATTVoice.Location = new System.Drawing.Point(28, 299);
+            this.panel_service_ATTVoice.Location = new System.Drawing.Point(28, 330);
             this.panel_service_ATTVoice.Margin = new System.Windows.Forms.Padding(5);
             this.panel_service_ATTVoice.Name = "panel_service_ATTVoice";
             this.panel_service_ATTVoice.Size = new System.Drawing.Size(118, 34);
@@ -302,7 +306,7 @@
             // 
             this.panel_risk_Devices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.panel_risk_Devices.Controls.Add(this.ll_risk_devices);
-            this.panel_risk_Devices.Location = new System.Drawing.Point(28, 143);
+            this.panel_risk_Devices.Location = new System.Drawing.Point(28, 174);
             this.panel_risk_Devices.Margin = new System.Windows.Forms.Padding(5);
             this.panel_risk_Devices.Name = "panel_risk_Devices";
             this.panel_risk_Devices.Size = new System.Drawing.Size(118, 34);
@@ -352,6 +356,32 @@
             this.ll_Camera.Click += new System.EventHandler(this.ll_Camera_Click);
             this.ll_Camera.MouseHover += new System.EventHandler(this.ll_Camera_MouseHover);
             // 
+            // panel_audioSetup
+            // 
+            this.panel_audioSetup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
+            this.panel_audioSetup.Controls.Add(this.ll_Audio);
+            this.panel_audioSetup.Location = new System.Drawing.Point(28, 95);
+            this.panel_audioSetup.Margin = new System.Windows.Forms.Padding(5);
+            this.panel_audioSetup.Name = "panel_audioSetup";
+            this.panel_audioSetup.Size = new System.Drawing.Size(118, 34);
+            this.panel_audioSetup.TabIndex = 25;
+            this.panel_audioSetup.Click += new System.EventHandler(this.panel_cameraSetup_Click);
+            this.panel_audioSetup.MouseLeave += new System.EventHandler(this.panel_cameraSetup_MouseLeave);
+            this.panel_audioSetup.MouseHover += new System.EventHandler(this.panel_cameraSetup_MouseHover);
+            // 
+            // ll_Audio
+            // 
+            this.ll_Audio.AutoSize = true;
+            this.ll_Audio.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.ll_Audio.LinkColor = System.Drawing.Color.White;
+            this.ll_Audio.Location = new System.Drawing.Point(4, 3);
+            this.ll_Audio.Name = "ll_Audio";
+            this.ll_Audio.Size = new System.Drawing.Size(44, 17);
+            this.ll_Audio.TabIndex = 0;
+            this.ll_Audio.TabStop = true;
+            this.ll_Audio.Text = "Audio";
+            this.ll_Audio.Click += new System.EventHandler(this.ll_Camera_Click);
+            // 
             // form_Settings_Container
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -381,6 +411,8 @@
             this.panel_risk_Devices.PerformLayout();
             this.panel_cameraSetup.ResumeLayout(false);
             this.panel_cameraSetup.PerformLayout();
+            this.panel_audioSetup.ResumeLayout(false);
+            this.panel_audioSetup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -410,5 +442,7 @@
         private System.Windows.Forms.LinkLabel ll_password;
         internal System.Windows.Forms.Panel panel_service_SMS;
         private System.Windows.Forms.LinkLabel ll_service_SMS;
+        internal System.Windows.Forms.Panel panel_audioSetup;
+        private System.Windows.Forms.LinkLabel ll_Audio;
     }
 }

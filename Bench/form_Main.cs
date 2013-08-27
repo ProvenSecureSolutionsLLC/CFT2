@@ -20,6 +20,13 @@ namespace Bench
         private form_About aboutForm = null;
         private form_Session_Container sessionForm = null;
         private formCAMture cameraForm = null;
+        private form_AudioManager audioForm = null;
+
+        private form_SystemUser systemuserForm = null;
+
+        private form_RMMContainer rmmForm = null;
+
+        private form_LowLevelATTVoice lowlevelattvoiceForm = null;
 
         public formMain()
         {
@@ -90,7 +97,11 @@ namespace Bench
                     {
                         cameraForm = new formCAMture();
                     }
-                    settingsForm = new form_Settings_Container(cameraForm);
+                    if (audioForm == null)
+                    {
+                        audioForm = new form_AudioManager();
+                    }
+                    settingsForm = new form_Settings_Container(cameraForm, audioForm);
                 }
 
                 this.panelBody.Controls.Clear();
@@ -98,13 +109,53 @@ namespace Bench
             }
             if (p.Name == "panelHeaderAcquire")
             {
+                Boolean b = true;
+                if (cameraForm == null) { b = false; }
+                if (audioForm == null) { b = false; }
+                if (systemuserForm == null) { b = false; }
+
+                if (b == false)
+                {
+                    MessageBox.Show("Please visit Settings and be sure to choose a Camera, an Audio Device, and a Select or Create a User from the Main Menu.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
                 if (sessionForm == null)
                 {
-                    sessionForm = new form_Session_Container(cameraForm);
+                    sessionForm = new form_Session_Container(cameraForm, audioForm, systemuserForm);
                 }
 
                 this.panelBody.Controls.Clear();
                 this.panelBody.Controls.Add(sessionForm.childbody());
+            }
+
+            if (p.Name == "panelHeaderReview")
+            {
+                if (systemuserForm == null)
+                {
+                    systemuserForm = new form_SystemUser();
+                }
+                this.panelBody.Controls.Clear();
+                this.panelBody.Controls.Add(systemuserForm.childpanel());
+            }
+
+            if (p.Name == "panelHeaderAnalyze")
+            {
+                if (rmmForm == null)
+                {
+                    rmmForm = new form_RMMContainer();
+                }
+                this.panelBody.Controls.Clear();
+                this.panelBody.Controls.Add(rmmForm.childpanel());
+            }
+
+            if (p.Name == "panelHeaderTransform")
+            {
+                if (lowlevelattvoiceForm == null)
+                {
+                    lowlevelattvoiceForm = new form_LowLevelATTVoice();
+                }
+                lowlevelattvoiceForm.ShowDialog();
             }
 
         }
@@ -129,6 +180,10 @@ namespace Bench
             l = (LinkLabel)sender;
             p = (Panel)l.Parent;
             this.panelHeaderAbout_MouseClick(p, e);
+        }
+
+        private void panelHeaderReview_Paint(object sender, PaintEventArgs e)
+        {
         }
 
     }
