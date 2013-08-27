@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelHeaderAnalyze = new System.Windows.Forms.Panel();
             this.ll_Analyze = new System.Windows.Forms.LinkLabel();
@@ -114,10 +113,10 @@
             this.ll_Transform.LinkColor = System.Drawing.Color.White;
             this.ll_Transform.Location = new System.Drawing.Point(3, 3);
             this.ll_Transform.Name = "ll_Transform";
-            this.ll_Transform.Size = new System.Drawing.Size(73, 17);
+            this.ll_Transform.Size = new System.Drawing.Size(69, 17);
             this.ll_Transform.TabIndex = 4;
             this.ll_Transform.TabStop = true;
-            this.ll_Transform.Text = "Transform";
+            this.ll_Transform.Text = "TestHook";
             this.ll_Transform.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ll_About_MouseClick);
             this.ll_Transform.MouseHover += new System.EventHandler(this.ll_About_MouseHover);
             // 
@@ -125,11 +124,12 @@
             // 
             this.panelHeaderReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.panelHeaderReview.Controls.Add(this.ll_Review);
-            this.panelHeaderReview.Location = new System.Drawing.Point(507, 24);
+            this.panelHeaderReview.Location = new System.Drawing.Point(410, 24);
             this.panelHeaderReview.Margin = new System.Windows.Forms.Padding(4);
             this.panelHeaderReview.Name = "panelHeaderReview";
             this.panelHeaderReview.Size = new System.Drawing.Size(89, 68);
             this.panelHeaderReview.TabIndex = 4;
+            this.panelHeaderReview.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeaderReview_Paint);
             this.panelHeaderReview.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelHeaderAbout_MouseClick);
             this.panelHeaderReview.MouseLeave += new System.EventHandler(this.panelHeaderAbout_MouseLeave);
             this.panelHeaderReview.MouseHover += new System.EventHandler(this.panelHeaderAbout_MouseHover);
@@ -141,10 +141,10 @@
             this.ll_Review.LinkColor = System.Drawing.Color.White;
             this.ll_Review.Location = new System.Drawing.Point(3, 3);
             this.ll_Review.Name = "ll_Review";
-            this.ll_Review.Size = new System.Drawing.Size(53, 17);
+            this.ll_Review.Size = new System.Drawing.Size(38, 17);
             this.ll_Review.TabIndex = 3;
             this.ll_Review.TabStop = true;
-            this.ll_Review.Text = "Review";
+            this.ll_Review.Text = "User";
             this.ll_Review.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ll_About_MouseClick);
             this.ll_Review.MouseHover += new System.EventHandler(this.ll_About_MouseHover);
             // 
@@ -152,7 +152,7 @@
             // 
             this.panelHeaderAcquire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.panelHeaderAcquire.Controls.Add(this.linkLabel1);
-            this.panelHeaderAcquire.Location = new System.Drawing.Point(410, 24);
+            this.panelHeaderAcquire.Location = new System.Drawing.Point(507, 24);
             this.panelHeaderAcquire.Margin = new System.Windows.Forms.Padding(4);
             this.panelHeaderAcquire.Name = "panelHeaderAcquire";
             this.panelHeaderAcquire.Size = new System.Drawing.Size(89, 68);
@@ -246,7 +246,6 @@
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.panelHeader);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

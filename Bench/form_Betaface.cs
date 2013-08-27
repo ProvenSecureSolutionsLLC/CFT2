@@ -17,11 +17,14 @@ namespace Bench
 
         public Double facescore = Double.NaN;
 
-        public form_Betaface(formCAMture parmf)
+        private string sessionfilename = "";
+
+        public form_Betaface(formCAMture parmf, string parmsessionfilename)
         {
             InitializeComponent();
 
             this.cameraForm = parmf;
+            sessionfilename = parmsessionfilename;
         }
 
         public Panel childbody()
@@ -54,10 +57,10 @@ namespace Bench
 
         private void btn_Cheese_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Note to programmer, reset the camForm into childs in case revisit Settings");
             if (cameraForm != null)
             {
                 this.pictureBox1.Image = cameraForm.picture().Image;
+                this.pictureBox1.Image.Save(sessionfilename + ".betaface.bmp");
             }
             timer1.Enabled = true;
         }

@@ -33,14 +33,25 @@ namespace Bench
 
         formCAMture cameraForm = null;
 
+        form_AudioManager audioForm = null;
 
-        public form_Session_Container(formCAMture parmf)
+        form_SystemUser systemuserForm = null;
+
+        class_rawauthsession r = null; 
+
+
+        public form_Session_Container(formCAMture parmf, form_AudioManager parma, form_SystemUser parmu)
         {
             InitializeComponent();
 
             this.cameraForm = parmf;
             // Although they appear functional
             // These are what we call "stubs" in Sprint 2, they are getting ready to be functional
+
+            this.audioForm = parma;
+            this.systemuserForm = parmu;
+
+            r = new class_rawauthsession(systemuserForm.systemuser);
 
             smsForm = new form_SMSMechanism();
             smspanel = smsForm.childbody();
@@ -55,19 +66,19 @@ namespace Bench
             knowledgepanel.SendToBack();
             knowledgepanel.Dock = DockStyle.Top;
 
-            betafaceForm = new form_Betaface(cameraForm);
+            betafaceForm = new form_Betaface(cameraForm, r.sessionfilename);
             betafacepanel = betafaceForm.childbody();
             this.panel_ChildBody.Controls.Add(betafacepanel);
             betafacepanel.SendToBack();
             betafacepanel.Dock = DockStyle.Top;
 
-            attfaceForm = new form_ATTFace(cameraForm);
+            attfaceForm = new form_ATTFace(cameraForm, r.sessionfilename);
             attfacepanel = attfaceForm.childbody();
             this.panel_ChildBody.Controls.Add(attfacepanel);
             attfacepanel.SendToBack();
             attfacepanel.Dock = DockStyle.Top;
 
-            attvoiceForm = new form_ATTVoiceFactor();
+            attvoiceForm = new form_ATTVoiceFactor(audioForm, r.sessionfilename);
             voicepanel = attvoiceForm.childpanel();
             this.panel_ChildBody.Controls.Add(voicepanel);
             voicepanel.SendToBack();
@@ -88,6 +99,11 @@ namespace Bench
             cameraForm = parmF;
         }
 
+        public void setAudioForm(form_AudioManager parmA)
+        {
+            audioForm = parmA;
+        }
+
 
         public Panel childbody()
         {
@@ -95,24 +111,12 @@ namespace Bench
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int x = 0;
-
-            x = this.panel_ChildBody.Controls.IndexOf(passwordpanel);
-            if (x <= 1)
-            {
-                this.panel_ChildBody.Controls.SetChildIndex(passwordpanel, x + 1);
-                this.panel_ChildBody.Invalidate();
-            }
-        }
 
         private void btn_recordsessionresult_Click(object sender, EventArgs e)
         {
-            class_rawauthsession r = new class_rawauthsession();
 
-            // Assumes user is "Default"
             r.character = "Actual";
+            r.user = this.systemuserForm.systemuser;
             r.password_score = this.passwordForm.pwscore;
             r.attvoice_score1 = this.attvoiceForm.voicescore;
             r.attface_score1 = this.attfaceForm.facescore;
@@ -120,11 +124,9 @@ namespace Bench
             r.knowledge_score = this.knowledgeForm.knowledgescore;
             r.sms_score = this.smsForm.smsscore;
 
-            MessageBox.Show("Note to programmer, this fishinshes with randomize() at the moment.");
-            r.randomize();
-
             r.savetofile();
         }
+
 
     }
 }

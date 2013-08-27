@@ -33,9 +33,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>pps_app_256px.ico</ApplicationIcon>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accord">
       <HintPath>..\packages\Accord.2.8.1.0\lib\Accord.dll</HintPath>
@@ -109,6 +106,18 @@
     <Reference Include="LinqLib">
       <HintPath>..\packages\LinqExtLibrary.1.0.4.2\lib\LinqLib.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Http">
+      <HintPath>..\..\..\betaface\Microsoft.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Http.Extensions">
+      <HintPath>..\..\..\betaface\Microsoft.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ServiceModel.Web">
+      <HintPath>..\..\..\betaface\Microsoft.ServiceModel.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio">
+      <HintPath>..\packages\NAudio.1.6\lib\net20\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -143,6 +152,12 @@
     <Compile Include="form_ATTFace.Designer.cs">
       <DependentUpon>form_ATTFace.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_AudioManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_AudioManager.Designer.cs">
+      <DependentUpon>form_AudioManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_AuthFactorSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +188,18 @@
     <Compile Include="form_KnowledgeMechanism.Designer.cs">
       <DependentUpon>form_KnowledgeMechanism.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_LowLevelATTVoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_LowLevelATTVoice.Designer.cs">
+      <DependentUpon>form_LowLevelATTVoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_LowLevelBetaface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_LowLevelBetaface.Designer.cs">
+      <DependentUpon>form_LowLevelBetaface.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +211,12 @@
     </Compile>
     <Compile Include="form_PasswordFactor.designer.cs">
       <DependentUpon>form_PasswordFactor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_RMMContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_RMMContainer.Designer.cs">
+      <DependentUpon>form_RMMContainer.cs</DependentUpon>
     </Compile>
     <Compile Include="form_Session_Container.cs">
       <SubType>Form</SubType>
@@ -203,6 +236,12 @@
     <Compile Include="form_SMSMechanism.Designer.cs">
       <DependentUpon>form_SMSMechanism.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_SystemUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_SystemUser.Designer.cs">
+      <DependentUpon>form_SystemUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_VoiceFactor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,12 +252,22 @@
     <Compile Include="passwordstrength.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordingPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecordingPanel.Designer.cs">
+      <DependentUpon>RecordingPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="riskcard.cs" />
+    <Compile Include="WebServiceTypes.cs" />
     <EmbeddedResource Include="form_About.resx">
       <DependentUpon>form_About.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_ATTFace.resx">
       <DependentUpon>form_ATTFace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_AudioManager.resx">
+      <DependentUpon>form_AudioManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_AuthFactorSettings.resx">
       <DependentUpon>form_AuthFactorSettings.cs</DependentUpon>
@@ -235,11 +284,20 @@
     <EmbeddedResource Include="form_KnowledgeMechanism.resx">
       <DependentUpon>form_KnowledgeMechanism.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form_LowLevelATTVoice.resx">
+      <DependentUpon>form_LowLevelATTVoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_LowLevelBetaface.resx">
+      <DependentUpon>form_LowLevelBetaface.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_Main.resx">
       <DependentUpon>form_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_PasswordFactor.resx">
       <DependentUpon>form_PasswordFactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_RMMContainer.resx">
+      <DependentUpon>form_RMMContainer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_Session_Container.resx">
       <DependentUpon>form_Session_Container.cs</DependentUpon>
@@ -249,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_SMSMechanism.resx">
       <DependentUpon>form_SMSMechanism.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_SystemUser.resx">
+      <DependentUpon>form_SystemUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_VoiceFactor.resx">
       <DependentUpon>form_VoiceFactor.cs</DependentUpon>
@@ -262,6 +323,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RecordingPanel.resx">
+      <DependentUpon>RecordingPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -277,7 +341,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="pps_app_256px.ico" />
+    <Content Include="score_calc_1_Adom_Allen.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

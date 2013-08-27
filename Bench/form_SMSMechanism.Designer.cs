@@ -30,24 +30,28 @@
         {
             this.panel_ChildBody = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tb_code = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tb_phone = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_Score = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.combo_Carrier = new System.Windows.Forms.ComboBox();
             this.panel_ChildBody.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_ChildBody
             // 
             this.panel_ChildBody.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_ChildBody.Controls.Add(this.combo_Carrier);
+            this.panel_ChildBody.Controls.Add(this.label2);
             this.panel_ChildBody.Controls.Add(this.button1);
-            this.panel_ChildBody.Controls.Add(this.textBox5);
+            this.panel_ChildBody.Controls.Add(this.tb_code);
             this.panel_ChildBody.Controls.Add(this.label5);
             this.panel_ChildBody.Controls.Add(this.label4);
-            this.panel_ChildBody.Controls.Add(this.textBox4);
+            this.panel_ChildBody.Controls.Add(this.tb_phone);
             this.panel_ChildBody.Controls.Add(this.label7);
             this.panel_ChildBody.Controls.Add(this.label1);
             this.panel_ChildBody.Controls.Add(this.tb_Score);
@@ -61,44 +65,46 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(228, 60);
+            this.button1.Location = new System.Drawing.Point(397, 60);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(47, 23);
             this.button1.TabIndex = 54;
             this.button1.Text = "Go";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox5
+            // tb_code
             // 
-            this.textBox5.Location = new System.Drawing.Point(464, 60);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 23);
-            this.textBox5.TabIndex = 53;
+            this.tb_code.Location = new System.Drawing.Point(494, 60);
+            this.tb_code.Name = "tb_code";
+            this.tb_code.Size = new System.Drawing.Size(158, 23);
+            this.tb_code.TabIndex = 53;
+            this.tb_code.TextChanged += new System.EventHandler(this.tb_code_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(376, 63);
+            this.label5.Location = new System.Drawing.Point(491, 40);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 17);
+            this.label5.Size = new System.Drawing.Size(161, 17);
             this.label5.TabIndex = 52;
-            this.label5.Text = "SMS Code: ";
+            this.label5.Text = "Type the received code:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 63);
+            this.label4.Location = new System.Drawing.Point(264, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 17);
             this.label4.TabIndex = 51;
             this.label4.Text = "Phone#: ";
             // 
-            // textBox4
+            // tb_phone
             // 
-            this.textBox4.Location = new System.Drawing.Point(122, 60);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 23);
-            this.textBox4.TabIndex = 50;
+            this.tb_phone.Location = new System.Drawing.Point(267, 60);
+            this.tb_phone.Name = "tb_phone";
+            this.tb_phone.Size = new System.Drawing.Size(124, 23);
+            this.tb_phone.TabIndex = 50;
             // 
             // label7
             // 
@@ -128,6 +134,32 @@
             this.tb_Score.Size = new System.Drawing.Size(81, 23);
             this.tb_Score.TabIndex = 37;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(102, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 17);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "Carrier: ";
+            // 
+            // combo_Carrier
+            // 
+            this.combo_Carrier.FormattingEnabled = true;
+            this.combo_Carrier.Items.AddRange(new object[] {
+            "AT&T Wireless",
+            "Sprint",
+            "Sprint PCS",
+            "T-Mobile",
+            "Verizon",
+            "Virgin",
+            ""});
+            this.combo_Carrier.Location = new System.Drawing.Point(105, 60);
+            this.combo_Carrier.Name = "combo_Carrier";
+            this.combo_Carrier.Size = new System.Drawing.Size(140, 24);
+            this.combo_Carrier.TabIndex = 57;
+            this.combo_Carrier.Text = "AT&T Wireless";
+            // 
             // form_SMSMechanism
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -148,12 +180,14 @@
 
         private System.Windows.Forms.Panel panel_ChildBody;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tb_code;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tb_phone;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_Score;
+        private System.Windows.Forms.ComboBox combo_Carrier;
+        private System.Windows.Forms.Label label2;
     }
 }
