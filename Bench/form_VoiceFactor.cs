@@ -176,6 +176,11 @@ namespace Bench
                     }
                 }
             }
+            else
+            {
+                // if cb_SpeechRecognitionEnabled is not checked
+                audioForm.StartRecording(sessionfilename);
+            }
         }
 
         private void timer2_Tick(object sender, EventArgs e)

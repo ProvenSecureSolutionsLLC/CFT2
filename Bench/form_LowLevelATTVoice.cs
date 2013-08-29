@@ -47,11 +47,11 @@ namespace Bench
 
             tb_check_url.Text = tb_Host.Text + tb_check_api.Text + "?sessionId=" + tb_sessionid.Text + "&access_token=" + tb_Token.Text;
 
-            tb_verify_url.Text = tb_Host.Text + tb_verify_api.Text + "?text=" + tb_Text.Text + "&sessionId=" + tb_sessionid.Text + "&access_token=" + tb_Token.Text;
+            tb_verify_url.Text = tb_Host.Text + tb_verify_api.Text + "?text=" + tb_randomtext.Text + "&sessionId=" + tb_sessionid.Text + "&access_token=" + tb_Token.Text;
 
-            tb_finalize_url.Text = tb_Host.Text + tb_finalize_api.Text + "?sessionId=" + tb_sessionid.Text;
+            tb_finalize_url.Text = tb_Host.Text + tb_finalize_api.Text + "?sessionId=" + tb_sessionid.Text + "&access_token=" + tb_Token.Text; 
 
-            tb_train_url.Text = tb_Host.Text + tb_train_api.Text + "?text=" + tb_Text.Text + "&sessionId=" + tb_sessionid.Text + "&access_token=" + tb_Token.Text;
+            tb_train_url.Text = tb_Host.Text + tb_train_api.Text + "?text=" + tb_randomtext.Text + "&sessionId=" + tb_sessionid.Text + "&access_token=" + tb_Token.Text;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -221,6 +221,7 @@ namespace Bench
                 {
                    jr.Read();
                    texttosay = jr.Value.ToString();
+                   tb_randomtext.Text = texttosay;
                 }
             }
             //MessageBox.Show(what);
@@ -414,6 +415,7 @@ namespace Bench
                     {
                         jr.Read();
                         verify_probability = jr.Value.ToString();
+                        tb_verifyscore.Text = verify_probability;
                     }
             }
             //MessageBox.Show(what);
@@ -424,7 +426,7 @@ namespace Bench
         private void btn_Finalize_Click(object sender, EventArgs e)
         {
             recalculate();
-            string whatiswrong = tb_finalize_url.Text + "?verified=true";
+            string whatiswrong = tb_finalize_url.Text + "&verified=true";
             WebRequest request = WebRequest.Create(whatiswrong);
             request.Method = WebRequestMethods.Http.Post;
             request.ContentType = "application/json";
@@ -433,7 +435,7 @@ namespace Bench
 
             // Create POST data and convert it to a byte array.
             // {"deviceId":"1234567890","userId":"e00db1a7e678265a457c9fc0b6fb174d-1410764394740916750"}
-            string postData = "{\"sessionId\":\"" + tb_sessionid.Text + "\",\"verified\":"+combo_verified.Text+"}";
+            string postData = "{\"sessionId\":\"" + tb_sessionid.Text + "\",\"verified\":\""+combo_verified.Text+"\"}";
             //MessageBox.Show("PostData: " + postData);
             byte[] byteArray = Encoding.UTF8.GetBytes(postData);
             // Set the ContentType property of the WebRequest.
@@ -470,20 +472,42 @@ namespace Bench
 
             string what = "";
             JsonTextReader jr = new JsonTextReader(new StringReader(tb_output.Text));
+            int counter = 0;
+            string v = "";
             while (jr.Read())
             {
-                if (jr.Value != null)
-                    what += "TokenType: " + jr.TokenType + " Value: " + jr.Value + "\r\n";
-                else
-                    what += "TokenType: " + jr.TokenType + "\r\n";
-                //                if (jr.TokenType.ToString() == "PropertyName")
-                //if (jr.Value.ToString() == "userId")
-                //{
-                //   jr.Read();
-                // tb_userid.Text = jr.Value.ToString();
-                // }
+                //if (jr.Value != null)
+                //    what += "TokenType: " + jr.TokenType + " Value: " + jr.Value + "\r\n";
+                //else
+                //    what += "TokenType: " + jr.TokenType + "\r\n";
+                if (jr.TokenType.ToString() == "PropertyName")
+                if (jr.Value.ToString() == "probability")
+                {
+                    jr.Read();
+                    v = jr.Value.ToString();
+
+                    switch (counter)
+                    {
+                        case 0: tb_score1.Text = v; 
+                            break;
+                        case 1: tb_score2.Text = v; 
+                            break;
+                        case 2: tb_score3.Text = v;
+                            break;
+                        case 3: tb_sessionscore.Text = v;
+                            break;
+                    }
+
+                    counter++;
+                }
+                tb_sessionscore.Text = v; // last one goes in this field
+
+                /*
+                 * {"status":"verified","score":{"fr":1.0E-4,"fa":1.0E-4,"probability":0.9999},"userid":"e00db1a7e678265a457c9fc0b6fb174d-3651198513698772735","sessionid":"49bf142b-26b8-4796-9b41-e42ddd4d1f7e","samples":["riwtx02bh09wt-201308280226-5363B","riwtx02bh09wt-201308280227-0163E"],"sample":{"id":"riwtx02bh09wt-201308280227-0163E","challenge":-1,"norm":13.8679848,"words":58,"rawnorm":13.8679848,"fr":1,"fa":1.0E-4,"probability":0.9999,"meanASR":50}}
+                 */
+
             }
-            MessageBox.Show(what);
+            //MessageBox.Show(what);
         }
 
         private void btn_Train_Click(object sender, EventArgs e)

@@ -64,10 +64,10 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 524);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 680);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(640, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1231, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -81,7 +81,7 @@
             this.tabControl_Child.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl_Child.Name = "tabControl_Child";
             this.tabControl_Child.SelectedIndex = 0;
-            this.tabControl_Child.Size = new System.Drawing.Size(601, 467);
+            this.tabControl_Child.Size = new System.Drawing.Size(1192, 623);
             this.tabControl_Child.TabIndex = 4;
             this.tabControl_Child.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
@@ -92,7 +92,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(593, 430);
+            this.tabPage1.Size = new System.Drawing.Size(1184, 586);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Setup Camera / Acquire New Images ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             this.panel3.Location = new System.Drawing.Point(4, 4);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(585, 422);
+            this.panel3.Size = new System.Drawing.Size(1176, 578);
             this.panel3.TabIndex = 1;
             this.panel3.Leave += new System.EventHandler(this.panel3_Leave);
             // 
@@ -171,7 +171,7 @@
             // 
             // panel_camera_image
             // 
-            this.panel_camera_image.AutoSize = true;
+            this.panel_camera_image.AutoScroll = true;
             this.panel_camera_image.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_camera_image.Controls.Add(this.pictureBox1);
             this.panel_camera_image.Location = new System.Drawing.Point(13, 59);
@@ -198,7 +198,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(593, 406);
+            this.tabPage2.Size = new System.Drawing.Size(593, 430);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = " Image Library ";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -211,7 +211,7 @@
             this.listView1.Location = new System.Drawing.Point(4, 4);
             this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(585, 398);
+            this.listView1.Size = new System.Drawing.Size(585, 422);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -241,7 +241,7 @@
             this.panel_ChildBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_ChildBody.Location = new System.Drawing.Point(0, 0);
             this.panel_ChildBody.Name = "panel_ChildBody";
-            this.panel_ChildBody.Size = new System.Drawing.Size(640, 524);
+            this.panel_ChildBody.Size = new System.Drawing.Size(1231, 680);
             this.panel_ChildBody.TabIndex = 5;
             // 
             // panel1
@@ -250,7 +250,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(39, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(601, 57);
+            this.panel1.Size = new System.Drawing.Size(1192, 57);
             this.panel1.TabIndex = 5;
             // 
             // panel_cameraSetup
@@ -279,14 +279,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(39, 524);
+            this.panel2.Size = new System.Drawing.Size(39, 680);
             this.panel2.TabIndex = 6;
             // 
             // formCAMture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 546);
+            this.ClientSize = new System.Drawing.Size(1231, 702);
             this.Controls.Add(this.panel_ChildBody);
             this.Controls.Add(this.statusStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

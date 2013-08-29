@@ -37,8 +37,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_Score = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel_ChildBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -48,8 +50,8 @@
             // panel_ChildBody
             // 
             this.panel_ChildBody.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_ChildBody.Controls.Add(this.panel1);
             this.panel_ChildBody.Controls.Add(this.progressBar1);
-            this.panel_ChildBody.Controls.Add(this.pictureBox1);
             this.panel_ChildBody.Controls.Add(this.btn_Cheese);
             this.panel_ChildBody.Controls.Add(this.label7);
             this.panel_ChildBody.Controls.Add(this.label1);
@@ -63,22 +65,22 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(320, 54);
+            this.progressBar1.Location = new System.Drawing.Point(438, 51);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(421, 23);
+            this.progressBar1.Size = new System.Drawing.Size(283, 23);
             this.progressBar1.TabIndex = 52;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(140, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 135);
+            this.pictureBox1.Size = new System.Drawing.Size(321, 144);
             this.pictureBox1.TabIndex = 51;
             this.pictureBox1.TabStop = false;
             // 
             // btn_Cheese
             // 
-            this.btn_Cheese.Location = new System.Drawing.Point(320, 20);
+            this.btn_Cheese.Location = new System.Drawing.Point(438, 17);
             this.btn_Cheese.Name = "btn_Cheese";
             this.btn_Cheese.Size = new System.Drawing.Size(126, 26);
             this.btn_Cheese.TabIndex = 50;
@@ -114,6 +116,15 @@
             this.tb_Score.Size = new System.Drawing.Size(81, 23);
             this.tb_Score.TabIndex = 37;
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(105, 11);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(327, 152);
+            this.panel1.TabIndex = 53;
+            // 
             // form_Betaface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -127,6 +138,7 @@
             this.panel_ChildBody.ResumeLayout(false);
             this.panel_ChildBody.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -141,5 +153,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_Score;
+        private System.Windows.Forms.Panel panel1;
     }
 }

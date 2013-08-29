@@ -59,8 +59,16 @@ namespace Bench
         {
             if (cameraForm != null)
             {
-                this.pictureBox1.Image = cameraForm.picture().Image;
-                this.pictureBox1.Image.Save(sessionfilename + ".betaface.bmp");
+                if (cameraForm.picture() != null)
+                {
+                    this.pictureBox1.Size = cameraForm.picture().Size;
+                    this.pictureBox1.Image = cameraForm.picture().Image;
+                    this.pictureBox1.Image.Save(sessionfilename + ".betaface.bmp");
+                }
+                else
+                {
+                    MessageBox.Show("cameraForm.picture is null.  Please check settings.");
+                }
             }
             timer1.Enabled = true;
         }

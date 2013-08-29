@@ -51,11 +51,19 @@ namespace Bench
 
         private void btn_Cheese_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Note to programmer, reset the camForm into childs in case revisit Settings");
+            //MessageBox.Show("Note to programmer, reset the camForm into childs in case revisit Settings");
             if (cameraForm != null)
             {
-                this.pictureBox1.Image = cameraForm.picture().Image;
-                this.pictureBox1.Image.Save(sessionfilename + ".attface.bmp");
+                if (cameraForm.picture() != null)
+                {
+                    this.pictureBox1.Size = cameraForm.picture().Size;
+                    this.pictureBox1.Image = cameraForm.picture().Image;
+                    this.pictureBox1.Image.Save(sessionfilename + ".attface.bmp");
+                }
+                else
+                {
+                    MessageBox.Show("cameraForm.Picture is null, please check settings.");
+                }
             }
             timer1.Enabled = true;
         }

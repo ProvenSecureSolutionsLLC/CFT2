@@ -33,7 +33,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.btn_recordsessionresult = new System.Windows.Forms.Button();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_session_header = new System.Windows.Forms.Panel();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -61,7 +60,6 @@
             this.panel_SessionResult.Controls.Add(this.label16);
             this.panel_SessionResult.Controls.Add(this.btn_recordsessionresult);
             this.panel_SessionResult.Controls.Add(this.checkBox3);
-            this.panel_SessionResult.Controls.Add(this.checkBox1);
             this.panel_SessionResult.Controls.Add(this.label2);
             this.panel_SessionResult.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_SessionResult.Location = new System.Drawing.Point(0, 392);
@@ -91,22 +89,12 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(293, 11);
+            this.checkBox3.Location = new System.Drawing.Point(182, 11);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(128, 21);
             this.checkBox3.TabIndex = 3;
             this.checkBox3.Text = "Session Passed";
             this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(182, 11);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(81, 21);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Imposter";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -187,7 +175,6 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Panel panel_SessionResult;
         private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btn_recordsessionresult;
