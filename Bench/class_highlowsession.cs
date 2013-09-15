@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bench
 {
-    class class_highlowsession
+    public class class_highlowsession
     {
         // use the data gathered in to here to generate more authentication session results for each user
         public string user { get; set; }

@@ -14,7 +14,59 @@ namespace Bench
     {
         private string baseDir = "";
         private string startFolder = "";
+
         public string systemuser { get { return this.combo_systemuser.Text; }  set { } }
+        public string attvoiceid
+        {
+            get 
+            {
+                System.Reflection.Assembly a = System.Reflection.Assembly.GetEntryAssembly();
+                baseDir = System.IO.Path.GetDirectoryName(a.Location);
+                startFolder = baseDir + "\\UserData\\" + systemuser;
+                string startFile = startFolder + "\\attvoice.id";
+
+                string retval = "";
+
+                if (!System.IO.Directory.Exists(startFolder))
+                {
+                    // the user folder should have already existed
+                    MessageBox.Show(startFolder, "Folder should have already existed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    System.IO.Directory.CreateDirectory(startFolder);
+                }
+
+                if (System.IO.File.Exists(startFile))
+                {
+                    System.IO.StreamReader sr = new System.IO.StreamReader(startFile);
+                    retval = sr.ReadToEnd();
+                    sr.Close();
+                }
+
+                return retval;
+            }
+            set 
+            {
+                System.Reflection.Assembly a = System.Reflection.Assembly.GetEntryAssembly();
+                baseDir = System.IO.Path.GetDirectoryName(a.Location);
+                startFolder = baseDir + "\\UserData\\" + systemuser;
+                string startFile = startFolder + "\\attvoice.id";
+
+                if (!System.IO.Directory.Exists(startFolder))
+                {
+                    // the user folder should have already existed
+                    MessageBox.Show(startFolder, "Folder should have already existed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    System.IO.Directory.CreateDirectory(startFolder);
+                }
+
+                if (System.IO.File.Exists(startFile)) 
+                {
+                    System.IO.File.Delete(startFile);
+                }
+
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(startFile);
+                sw.Write(value);
+                sw.Close();
+            }
+        }
 
         public Panel childpanel()
         {

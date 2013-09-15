@@ -284,7 +284,7 @@ namespace Bench
                 System.Collections.ArrayList al_targets = new System.Collections.ArrayList();
                 for (iArgIdx++; iArgIdx < args.Length; iArgIdx++)
                 {
-                    Guid g;
+                    //Guid g;
                     if (!String.IsNullOrEmpty(args[iArgIdx]))
                     {
                         al_targets.Add(args[iArgIdx]);
@@ -396,6 +396,11 @@ namespace Bench
             }
 
             return;
+        }
+
+        private void btn_pickfile_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
         }
     }
 
