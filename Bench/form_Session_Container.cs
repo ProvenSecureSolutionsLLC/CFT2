@@ -13,6 +13,9 @@ namespace Bench
     public partial class form_Session_Container : Form
     {
 
+        DateTime sessionstart = DateTime.Now;
+        DateTime sessionfinished = DateTime.Now;
+
         form_ATTVoiceFactor attvoiceForm = null;
         Panel voicepanel = null;
 
@@ -22,14 +25,14 @@ namespace Bench
         form_ATTFace attfaceForm = null;
         Panel attfacepanel = null;
 
-        form_Betaface betafaceForm = null;
-        Panel betafacepanel = null;
+//        form_Betaface betafaceForm = null;
+//        Panel betafacepanel = null;
 
         form_KnowledgeMechanism knowledgeForm = null;
         Panel knowledgepanel = null;
 
-        form_SMSMechanism smsForm = null;
-        Panel smspanel = null;
+//        form_SMSMechanism smsForm = null;
+//        Panel smspanel = null;
 
         formCAMture cameraForm = null;
 
@@ -53,11 +56,13 @@ namespace Bench
 
             r = new class_rawauthsession(systemuserForm.systemuser);
 
+            /* reworked - now embedded in Password Form - because it will also "login" and Gmail the SMS message - double whammy
             smsForm = new form_SMSMechanism();
             smspanel = smsForm.childbody();
             this.panel_ChildBody.Controls.Add(smspanel);
             smspanel.SendToBack();
             smspanel.Dock = DockStyle.Top;
+             */
 
 
             knowledgeForm = new form_KnowledgeMechanism();
@@ -66,11 +71,11 @@ namespace Bench
             knowledgepanel.SendToBack();
             knowledgepanel.Dock = DockStyle.Top;
 
-            betafaceForm = new form_Betaface(cameraForm, r.sessionfilename);
+/*            betafaceForm = new form_Betaface(cameraForm, r.sessionfilename);
             betafacepanel = betafaceForm.childbody();
             this.panel_ChildBody.Controls.Add(betafacepanel);
             betafacepanel.SendToBack();
-            betafacepanel.Dock = DockStyle.Top;
+            betafacepanel.Dock = DockStyle.Top;  */
 
             attfaceForm = new form_ATTFace(cameraForm, r.sessionfilename);
             attfacepanel = attfaceForm.childbody();
@@ -78,7 +83,7 @@ namespace Bench
             attfacepanel.SendToBack();
             attfacepanel.Dock = DockStyle.Top;
 
-            attvoiceForm = new form_ATTVoiceFactor(audioForm, r.sessionfilename);
+            attvoiceForm = new form_ATTVoiceFactor(audioForm, r, systemuserForm);
             voicepanel = attvoiceForm.childpanel();
             this.panel_ChildBody.Controls.Add(voicepanel);
             voicepanel.SendToBack();
@@ -110,21 +115,61 @@ namespace Bench
             return this.panel_ChildBody;
         }
 
+        private void updateElapsedTime()
+        {
+            sessionfinished = DateTime.Now;
+            System.TimeSpan t = sessionstart - sessionfinished;
+
+            label_ElapsedTime.Text = "Elapsed Time: " + t.TotalSeconds.ToString("####") + " seconds";
+        }
 
 
         private void btn_recordsessionresult_Click(object sender, EventArgs e)
         {
 
+            timer_session.Enabled = false;
+            this.sessionfinished = DateTime.Now;
+            r.enddatetime = this.sessionfinished;
+            updateElapsedTime();
+
             r.character = "Actual";
             r.user = this.systemuserForm.systemuser;
             r.password_score = this.passwordForm.pwscore;
+            r.sms_score = this.passwordForm.smsscore;
             r.attvoice_score1 = this.attvoiceForm.voicescore;
             r.attface_score1 = this.attfaceForm.facescore;
-            r.betaface_score1 = this.betafaceForm.facescore;
+            r.betaface_score1 = this.attfaceForm.betafacescore;
             r.knowledge_score = this.knowledgeForm.knowledgescore;
-            r.sms_score = this.smsForm.smsscore;
+
+            // reworked
+            //r.sms_score = this.smsForm.smsscore;
+
+            r.sms_score = this.passwordForm.smsscore;
 
             r.savetofile();
+
+            attvoiceForm.clear();
+            passwordForm.clear();
+            attfaceForm.clear();
+            knowledgeForm.clear();
+
+            // In case user forgets to press the start button
+            this.sessionstart = DateTime.Now;
+            r.startdatetime = this.sessionstart;
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // session start
+            this.sessionstart = DateTime.Now;
+            r.startdatetime = this.sessionstart;
+            timer_session.Enabled = true;
+        }
+
+        private void timer_session_Tick(object sender, EventArgs e)
+        {
+            updateElapsedTime();
         }
 
 

@@ -24,6 +24,13 @@ namespace Bench
             return Compute(word, 6);
         }
 
+        public void clear()
+        {
+            tb_maybe.Text = "";
+            tb_Score.Text = "";
+            knowledgescore = Double.NaN;
+        }
+
  public static string Compute(string word, int length)
     {
         // Value to return
@@ -199,6 +206,7 @@ namespace Bench
             if (count > 10) { count = 10; }
             Double d = (count * weight) / 100.00;
             tb_Score.Text = d.ToString("###.####");
+            knowledgescore = d;
         }
 
         public Panel childbody()

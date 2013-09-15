@@ -59,7 +59,12 @@ namespace Bench
             {
                 if (waveIn == null)
                 {
-                    outputFilename = parmFilename + ".wav"; // String.Format("NAudioDemo {0:yyy-mm-dd HH-mm-ss}.wav", DateTime.Now);
+                    outputFilename = parmFilename;
+                    string tmp = parmFilename.ToUpper();
+                    if (!tmp.Contains(".WAV"))
+                    {
+                        outputFilename = parmFilename + ".wav"; // String.Format("NAudioDemo {0:yyy-mm-dd HH-mm-ss}.wav", DateTime.Now);
+                    }
                     if (radioButtonWaveIn.Checked)
                     {
                         waveIn = new WaveIn();
@@ -82,16 +87,18 @@ namespace Bench
                         waveIn = new WasapiLoopbackCapture();
                     }
 
-                    writer = new WaveFileWriter(Path.Combine(outputFolder, outputFilename), waveIn.WaveFormat);
-
+                    //writer = new WaveFileWriter(Path.Combine(outputFolder, outputFilename), waveIn.WaveFormat);
+                    writer = new WaveFileWriter(outputFilename, waveIn.WaveFormat);
+                    Debug.WriteLine("StartRecording: " + outputFolder + outputFilename);
                     waveIn.DataAvailable += OnDataAvailable;
                     waveIn.RecordingStopped += OnRecordingStopped;
                     waveIn.StartRecording();
                     buttonStartRecording.Enabled = false;
                 }
             }
-            catch
+            catch (Exception e)
             {
+                MessageBox.Show("Start Recording Error: " + e.Message);
                 retval = false;
             }
             return retval;
@@ -196,7 +203,10 @@ namespace Bench
         public void StopRecording()
         {
             Debug.WriteLine("StopRecording");
-            waveIn.StopRecording();
+            if (waveIn != null)
+            {
+                waveIn.StopRecording();
+            }
         }
 
         private void OnButtonStopRecordingClick(object sender, EventArgs e)

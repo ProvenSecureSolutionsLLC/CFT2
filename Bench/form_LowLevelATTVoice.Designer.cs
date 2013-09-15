@@ -30,6 +30,16 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label36 = new System.Windows.Forms.Label();
+            this.tb_token_api = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.tb_token_url = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.tb_attclientsecret = new System.Windows.Forms.TextBox();
+            this.tb_attclientid = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.btn_gettoken = new System.Windows.Forms.Button();
             this.tb_Token = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tb_Host = new System.Windows.Forms.TextBox();
@@ -57,6 +67,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.tb_createvoicesession_api = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label32 = new System.Windows.Forms.Label();
+            this.tb_randomtext = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tb_sessionid = new System.Windows.Forms.TextBox();
             this.btn_RandomStatement = new System.Windows.Forms.Button();
@@ -71,17 +83,24 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tb_verifyscore = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.tb_upload_file = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.tb_Text = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.btn_Verify = new System.Windows.Forms.Button();
             this.tb_verify_url = new System.Windows.Forms.TextBox();
             this.tb_verify_api = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tb_sessionscore = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.tb_score3 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.tb_score2 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.tb_score1 = new System.Windows.Forms.TextBox();
             this.btn_Finalize = new System.Windows.Forms.Button();
             this.combo_verified = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -93,13 +112,18 @@
             this.btn_Train = new System.Windows.Forms.Button();
             this.tb_trainfile = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.tb_traintext = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.tb_train_url = new System.Windows.Forms.TextBox();
             this.tb_train_api = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.btn_fullboat = new System.Windows.Forms.Button();
             this.tb_output = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_log = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.btn_AsynchInvoke = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -110,6 +134,9 @@
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage9.SuspendLayout();
+            this.tabPage10.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -123,16 +150,27 @@
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage9);
+            this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1052, 195);
+            this.tabControl1.Size = new System.Drawing.Size(1052, 222);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label36);
+            this.tabPage1.Controls.Add(this.tb_token_api);
+            this.tabPage1.Controls.Add(this.label35);
+            this.tabPage1.Controls.Add(this.tb_token_url);
+            this.tabPage1.Controls.Add(this.label34);
+            this.tabPage1.Controls.Add(this.tb_attclientsecret);
+            this.tabPage1.Controls.Add(this.tb_attclientid);
+            this.tabPage1.Controls.Add(this.label33);
+            this.tabPage1.Controls.Add(this.label25);
+            this.tabPage1.Controls.Add(this.btn_gettoken);
             this.tabPage1.Controls.Add(this.tb_Token);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.tb_Host);
@@ -141,23 +179,109 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1044, 166);
+            this.tabPage1.Size = new System.Drawing.Size(1044, 193);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Base Settings ";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(21, 90);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(73, 17);
+            this.label36.TabIndex = 17;
+            this.label36.Text = "Token API";
+            // 
+            // tb_token_api
+            // 
+            this.tb_token_api.Location = new System.Drawing.Point(113, 87);
+            this.tb_token_api.Name = "tb_token_api";
+            this.tb_token_api.Size = new System.Drawing.Size(923, 23);
+            this.tb_token_api.TabIndex = 16;
+            this.tb_token_api.Text = "https://auth.tfoundry.com/oauth/token";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(21, 119);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(80, 17);
+            this.label35.TabIndex = 15;
+            this.label35.Text = "Token URL";
+            // 
+            // tb_token_url
+            // 
+            this.tb_token_url.Location = new System.Drawing.Point(113, 116);
+            this.tb_token_url.Name = "tb_token_url";
+            this.tb_token_url.Size = new System.Drawing.Size(923, 23);
+            this.tb_token_url.TabIndex = 14;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(-3, 4);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(354, 17);
+            this.label34.TabIndex = 13;
+            this.label34.Text = "https://apimatrix.tfoundry.com/services/voiceverification";
+            // 
+            // tb_attclientsecret
+            // 
+            this.tb_attclientsecret.Location = new System.Drawing.Point(424, 51);
+            this.tb_attclientsecret.Name = "tb_attclientsecret";
+            this.tb_attclientsecret.Size = new System.Drawing.Size(200, 23);
+            this.tb_attclientsecret.TabIndex = 12;
+            this.tb_attclientsecret.Text = "arlllwmgziyitlylt3yxhjff5tagdcw6";
+            // 
+            // tb_attclientid
+            // 
+            this.tb_attclientid.Location = new System.Drawing.Point(113, 51);
+            this.tb_attclientid.Name = "tb_attclientid";
+            this.tb_attclientid.Size = new System.Drawing.Size(242, 23);
+            this.tb_attclientid.TabIndex = 11;
+            this.tb_attclientid.Text = "chgeevn0tteexhh9b2coyfbqgunahw5u";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(361, 54);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(49, 17);
+            this.label33.TabIndex = 10;
+            this.label33.Text = "Secret";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(8, 51);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(91, 17);
+            this.label25.TabIndex = 9;
+            this.label25.Text = "ATT Client ID";
+            // 
+            // btn_gettoken
+            // 
+            this.btn_gettoken.Location = new System.Drawing.Point(24, 145);
+            this.btn_gettoken.Name = "btn_gettoken";
+            this.btn_gettoken.Size = new System.Drawing.Size(109, 28);
+            this.btn_gettoken.TabIndex = 8;
+            this.btn_gettoken.Text = "Get Token ";
+            this.btn_gettoken.UseVisualStyleBackColor = true;
+            this.btn_gettoken.Click += new System.EventHandler(this.btn_gettoken_Click);
+            // 
             // tb_Token
             // 
-            this.tb_Token.Location = new System.Drawing.Point(105, 53);
+            this.tb_Token.Location = new System.Drawing.Point(688, 51);
             this.tb_Token.Name = "tb_Token";
-            this.tb_Token.Size = new System.Drawing.Size(559, 23);
+            this.tb_Token.Size = new System.Drawing.Size(252, 23);
             this.tb_Token.TabIndex = 7;
-            this.tb_Token.Text = "sakmllld5z6rrt6bmvmn32pfk2ajkfo6";
+            this.tb_Token.Text = "67l2yfy4oqk9ujlvxnmdoa2cxed4vbss";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 56);
+            this.label4.Location = new System.Drawing.Point(630, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 17);
             this.label4.TabIndex = 6;
@@ -165,17 +289,16 @@
             // 
             // tb_Host
             // 
-            this.tb_Host.Location = new System.Drawing.Point(105, 24);
+            this.tb_Host.Location = new System.Drawing.Point(113, 24);
             this.tb_Host.Name = "tb_Host";
-            this.tb_Host.Size = new System.Drawing.Size(559, 23);
+            this.tb_Host.Size = new System.Drawing.Size(723, 23);
             this.tb_Host.TabIndex = 2;
             this.tb_Host.Text = "https://api.foundry.att.com/a1";
-            this.tb_Host.TextChanged += new System.EventHandler(this.tb_Host_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 27);
+            this.label1.Location = new System.Drawing.Point(31, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 0;
@@ -192,11 +315,10 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1044, 166);
+            this.tabPage2.Size = new System.Drawing.Size(1044, 193);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Create User ";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
             // tb_createuser_url
             // 
@@ -254,11 +376,10 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1044, 166);
+            this.tabPage3.Size = new System.Drawing.Size(1044, 193);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "User Status ";
             this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
             // 
             // tb_userid
             // 
@@ -267,7 +388,6 @@
             this.tb_userid.Size = new System.Drawing.Size(391, 23);
             this.tb_userid.TabIndex = 11;
             this.tb_userid.Text = "e00db1a7e678265a457c9fc0b6fb174d-1410764394740916750";
-            this.tb_userid.TextChanged += new System.EventHandler(this.tb_userid_TextChanged);
             // 
             // label7
             // 
@@ -334,7 +454,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1044, 166);
+            this.tabPage5.Size = new System.Drawing.Size(1044, 193);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Create Voice Session ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -372,7 +492,6 @@
             this.tb_createvoicesession_url.Name = "tb_createvoicesession_url";
             this.tb_createvoicesession_url.Size = new System.Drawing.Size(713, 23);
             this.tb_createvoicesession_url.TabIndex = 15;
-            this.tb_createvoicesession_url.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label12
             // 
@@ -382,7 +501,6 @@
             this.label12.Size = new System.Drawing.Size(44, 17);
             this.label12.TabIndex = 14;
             this.label12.Text = "URL: ";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label13
             // 
@@ -401,10 +519,11 @@
             this.tb_createvoicesession_api.Size = new System.Drawing.Size(391, 23);
             this.tb_createvoicesession_api.TabIndex = 12;
             this.tb_createvoicesession_api.Text = "/voiceverification/voicesession/create";
-            this.tb_createvoicesession_api.TextChanged += new System.EventHandler(this.tb_createvoicesession_api_TextChanged);
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label32);
+            this.tabPage4.Controls.Add(this.tb_randomtext);
             this.tabPage4.Controls.Add(this.label10);
             this.tabPage4.Controls.Add(this.tb_sessionid);
             this.tabPage4.Controls.Add(this.btn_RandomStatement);
@@ -415,15 +534,31 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1044, 166);
+            this.tabPage4.Size = new System.Drawing.Size(1044, 193);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Random Statement ";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(23, 113);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(92, 17);
+            this.label32.TabIndex = 8;
+            this.label32.Text = "Random Text";
+            // 
+            // tb_randomtext
+            // 
+            this.tb_randomtext.Location = new System.Drawing.Point(159, 113);
+            this.tb_randomtext.Name = "tb_randomtext";
+            this.tb_randomtext.Size = new System.Drawing.Size(496, 23);
+            this.tb_randomtext.TabIndex = 7;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(24, 62);
+            this.label10.Location = new System.Drawing.Point(24, 60);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(95, 17);
             this.label10.TabIndex = 6;
@@ -431,7 +566,7 @@
             // 
             // tb_sessionid
             // 
-            this.tb_sessionid.Location = new System.Drawing.Point(159, 58);
+            this.tb_sessionid.Location = new System.Drawing.Point(159, 56);
             this.tb_sessionid.Name = "tb_sessionid";
             this.tb_sessionid.Size = new System.Drawing.Size(496, 23);
             this.tb_sessionid.TabIndex = 5;
@@ -449,7 +584,7 @@
             // 
             // tb_randomstatement_url
             // 
-            this.tb_randomstatement_url.Location = new System.Drawing.Point(159, 88);
+            this.tb_randomstatement_url.Location = new System.Drawing.Point(159, 84);
             this.tb_randomstatement_url.Name = "tb_randomstatement_url";
             this.tb_randomstatement_url.Size = new System.Drawing.Size(496, 23);
             this.tb_randomstatement_url.TabIndex = 3;
@@ -465,7 +600,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 91);
+            this.label9.Location = new System.Drawing.Point(23, 87);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 17);
             this.label9.TabIndex = 1;
@@ -482,6 +617,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.btn_AsynchInvoke);
             this.tabPage6.Controls.Add(this.btn_Check);
             this.tabPage6.Controls.Add(this.tb_check_url);
             this.tabPage6.Controls.Add(this.tb_check_api);
@@ -490,7 +626,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1044, 166);
+            this.tabPage6.Size = new System.Drawing.Size(1044, 193);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Check ";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -540,10 +676,10 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.tb_verifyscore);
+            this.tabPage7.Controls.Add(this.label31);
             this.tabPage7.Controls.Add(this.tb_upload_file);
             this.tabPage7.Controls.Add(this.label19);
-            this.tabPage7.Controls.Add(this.tb_Text);
-            this.tabPage7.Controls.Add(this.label18);
             this.tabPage7.Controls.Add(this.btn_Verify);
             this.tabPage7.Controls.Add(this.tb_verify_url);
             this.tabPage7.Controls.Add(this.tb_verify_api);
@@ -552,49 +688,48 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1044, 166);
+            this.tabPage7.Size = new System.Drawing.Size(1044, 193);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Verify ";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // tb_verifyscore
+            // 
+            this.tb_verifyscore.Location = new System.Drawing.Point(80, 122);
+            this.tb_verifyscore.Name = "tb_verifyscore";
+            this.tb_verifyscore.Size = new System.Drawing.Size(100, 23);
+            this.tb_verifyscore.TabIndex = 21;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(22, 125);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(45, 17);
+            this.label31.TabIndex = 20;
+            this.label31.Text = "Score";
+            // 
             // tb_upload_file
             // 
-            this.tb_upload_file.Location = new System.Drawing.Point(80, 81);
+            this.tb_upload_file.Location = new System.Drawing.Point(80, 66);
             this.tb_upload_file.Name = "tb_upload_file";
             this.tb_upload_file.Size = new System.Drawing.Size(956, 23);
             this.tb_upload_file.TabIndex = 19;
-            this.tb_upload_file.Text = "C:\\vs2013\\Projects\\Bench\\Bench\\bin\\Debug\\UserData\\Stephen\\Stephen_Actual_20130825" +
-    "_085547.session.wav";
+            this.tb_upload_file.Text = "C:\\vs2013\\Projects\\Bench\\Bench\\bin\\Debug\\UserData\\Default\\Default_Actual_20130825" +
+    "_045811.session.wav";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(8, 84);
+            this.label19.Location = new System.Drawing.Point(8, 69);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(70, 17);
             this.label19.TabIndex = 18;
             this.label19.Text = "Audio File";
             // 
-            // tb_Text
-            // 
-            this.tb_Text.Location = new System.Drawing.Point(80, 51);
-            this.tb_Text.Name = "tb_Text";
-            this.tb_Text.Size = new System.Drawing.Size(496, 23);
-            this.tb_Text.TabIndex = 17;
-            this.tb_Text.Text = "This is a test of the emergency broadcast system this is only a test";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(8, 54);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(67, 17);
-            this.label18.TabIndex = 16;
-            this.label18.Text = "Text Said";
-            // 
             // btn_Verify
             // 
-            this.btn_Verify.Location = new System.Drawing.Point(744, 43);
+            this.btn_Verify.Location = new System.Drawing.Point(744, 31);
             this.btn_Verify.Name = "btn_Verify";
             this.btn_Verify.Size = new System.Drawing.Size(75, 28);
             this.btn_Verify.TabIndex = 15;
@@ -604,14 +739,14 @@
             // 
             // tb_verify_url
             // 
-            this.tb_verify_url.Location = new System.Drawing.Point(80, 118);
+            this.tb_verify_url.Location = new System.Drawing.Point(80, 93);
             this.tb_verify_url.Name = "tb_verify_url";
             this.tb_verify_url.Size = new System.Drawing.Size(956, 23);
             this.tb_verify_url.TabIndex = 14;
             // 
             // tb_verify_api
             // 
-            this.tb_verify_api.Location = new System.Drawing.Point(80, 24);
+            this.tb_verify_api.Location = new System.Drawing.Point(80, 12);
             this.tb_verify_api.Name = "tb_verify_api";
             this.tb_verify_api.Size = new System.Drawing.Size(496, 23);
             this.tb_verify_api.TabIndex = 13;
@@ -620,7 +755,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(22, 121);
+            this.label11.Location = new System.Drawing.Point(31, 96);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 17);
             this.label11.TabIndex = 12;
@@ -629,7 +764,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(22, 27);
+            this.label17.Location = new System.Drawing.Point(22, 15);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(29, 17);
             this.label17.TabIndex = 11;
@@ -637,7 +772,14 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.tb_sessionscore);
+            this.tabPage8.Controls.Add(this.label30);
+            this.tabPage8.Controls.Add(this.tb_score3);
+            this.tabPage8.Controls.Add(this.label29);
+            this.tabPage8.Controls.Add(this.tb_score2);
+            this.tabPage8.Controls.Add(this.label28);
             this.tabPage8.Controls.Add(this.label23);
+            this.tabPage8.Controls.Add(this.tb_score1);
             this.tabPage8.Controls.Add(this.btn_Finalize);
             this.tabPage8.Controls.Add(this.combo_verified);
             this.tabPage8.Controls.Add(this.label20);
@@ -648,19 +790,74 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1044, 166);
+            this.tabPage8.Size = new System.Drawing.Size(1044, 193);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Finalize ";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // tb_sessionscore
+            // 
+            this.tb_sessionscore.Location = new System.Drawing.Point(771, 122);
+            this.tb_sessionscore.Name = "tb_sessionscore";
+            this.tb_sessionscore.Size = new System.Drawing.Size(100, 23);
+            this.tb_sessionscore.TabIndex = 22;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(665, 125);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(97, 17);
+            this.label30.TabIndex = 21;
+            this.label30.Text = "Session score";
+            // 
+            // tb_score3
+            // 
+            this.tb_score3.Location = new System.Drawing.Point(544, 122);
+            this.tb_score3.Name = "tb_score3";
+            this.tb_score3.Size = new System.Drawing.Size(100, 23);
+            this.tb_score3.TabIndex = 20;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(478, 125);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(51, 17);
+            this.label29.TabIndex = 19;
+            this.label29.Text = "score3";
+            // 
+            // tb_score2
+            // 
+            this.tb_score2.Location = new System.Drawing.Point(345, 122);
+            this.tb_score2.Name = "tb_score2";
+            this.tb_score2.Size = new System.Drawing.Size(100, 23);
+            this.tb_score2.TabIndex = 18;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(279, 125);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(51, 17);
+            this.label28.TabIndex = 17;
+            this.label28.Text = "score2";
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(125, 129);
+            this.label23.Location = new System.Drawing.Point(94, 125);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(165, 17);
-            this.label23.TabIndex = 15;
-            this.label23.Text = "*This API bombs the .exe";
+            this.label23.Size = new System.Drawing.Size(51, 17);
+            this.label23.TabIndex = 16;
+            this.label23.Text = "score1";
+            // 
+            // tb_score1
+            // 
+            this.tb_score1.Location = new System.Drawing.Point(162, 122);
+            this.tb_score1.Name = "tb_score1";
+            this.tb_score1.Size = new System.Drawing.Size(100, 23);
+            this.tb_score1.TabIndex = 15;
             // 
             // btn_Finalize
             // 
@@ -731,8 +928,6 @@
             this.tabPage9.Controls.Add(this.btn_Train);
             this.tabPage9.Controls.Add(this.tb_trainfile);
             this.tabPage9.Controls.Add(this.label24);
-            this.tabPage9.Controls.Add(this.tb_traintext);
-            this.tabPage9.Controls.Add(this.label25);
             this.tabPage9.Controls.Add(this.tb_train_url);
             this.tabPage9.Controls.Add(this.tb_train_api);
             this.tabPage9.Controls.Add(this.label26);
@@ -740,7 +935,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1044, 166);
+            this.tabPage9.Size = new System.Drawing.Size(1044, 193);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Train ";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -761,8 +956,8 @@
             this.tb_trainfile.Name = "tb_trainfile";
             this.tb_trainfile.Size = new System.Drawing.Size(956, 23);
             this.tb_trainfile.TabIndex = 27;
-            this.tb_trainfile.Text = "C:\\vs2013\\Projects\\Bench\\Bench\\bin\\Debug\\UserData\\Stephen\\Stephen_Actual_20130825" +
-    "_085547.session.wav";
+            this.tb_trainfile.Text = "C:\\vs2013\\Projects\\Bench\\Bench\\bin\\Debug\\UserData\\Default\\Default_Actual_20130825" +
+    "_073151.session.wav";
             // 
             // label24
             // 
@@ -772,23 +967,6 @@
             this.label24.Size = new System.Drawing.Size(70, 17);
             this.label24.TabIndex = 26;
             this.label24.Text = "Audio File";
-            // 
-            // tb_traintext
-            // 
-            this.tb_traintext.Location = new System.Drawing.Point(80, 52);
-            this.tb_traintext.Name = "tb_traintext";
-            this.tb_traintext.Size = new System.Drawing.Size(496, 23);
-            this.tb_traintext.TabIndex = 25;
-            this.tb_traintext.Text = "This is a test of the emergency broadcast system this is only a test";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(8, 55);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(67, 17);
-            this.label25.TabIndex = 24;
-            this.label25.Text = "Text Said";
             // 
             // tb_train_url
             // 
@@ -823,20 +1001,88 @@
             this.label27.TabIndex = 20;
             this.label27.Text = "API";
             // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.btn_fullboat);
+            this.tabPage10.Location = new System.Drawing.Point(4, 25);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(1044, 193);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "FullBoat ";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // btn_fullboat
+            // 
+            this.btn_fullboat.Location = new System.Drawing.Point(18, 31);
+            this.btn_fullboat.Name = "btn_fullboat";
+            this.btn_fullboat.Size = new System.Drawing.Size(75, 28);
+            this.btn_fullboat.TabIndex = 0;
+            this.btn_fullboat.Text = "Go";
+            this.btn_fullboat.UseVisualStyleBackColor = true;
+            // 
             // tb_output
             // 
-            this.tb_output.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_output.Location = new System.Drawing.Point(0, 195);
+            this.tb_output.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tb_output.Location = new System.Drawing.Point(0, 222);
             this.tb_output.Multiline = true;
             this.tb_output.Name = "tb_output";
-            this.tb_output.Size = new System.Drawing.Size(1052, 404);
+            this.tb_output.Size = new System.Drawing.Size(431, 377);
             this.tb_output.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tb_log);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(431, 222);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(621, 377);
+            this.panel1.TabIndex = 3;
+            // 
+            // tb_log
+            // 
+            this.tb_log.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_log.Location = new System.Drawing.Point(0, 42);
+            this.tb_log.Multiline = true;
+            this.tb_log.Name = "tb_log";
+            this.tb_log.Size = new System.Drawing.Size(621, 335);
+            this.tb_log.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label18);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(621, 42);
+            this.panel2.TabIndex = 0;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(16, 13);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(32, 17);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Log";
+            // 
+            // btn_AsynchInvoke
+            // 
+            this.btn_AsynchInvoke.Location = new System.Drawing.Point(697, 125);
+            this.btn_AsynchInvoke.Name = "btn_AsynchInvoke";
+            this.btn_AsynchInvoke.Size = new System.Drawing.Size(126, 29);
+            this.btn_AsynchInvoke.TabIndex = 14;
+            this.btn_AsynchInvoke.Text = "Asynch Invoke";
+            this.btn_AsynchInvoke.UseVisualStyleBackColor = true;
+            this.btn_AsynchInvoke.Click += new System.EventHandler(this.btn_AsynchInvoke_Click);
             // 
             // form_LowLevelATTVoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 599);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tb_output);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -863,6 +1109,11 @@
             this.tabPage8.PerformLayout();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -919,8 +1170,6 @@
         private System.Windows.Forms.TextBox tb_verify_api;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox tb_Text;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox tb_upload_file;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TabPage tabPage8;
@@ -931,16 +1180,42 @@
         private System.Windows.Forms.TextBox tb_finalize_api;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.Button btn_Train;
         private System.Windows.Forms.TextBox tb_trainfile;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox tb_traintext;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox tb_train_url;
         private System.Windows.Forms.TextBox tb_train_api;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox tb_score2;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox tb_score1;
+        private System.Windows.Forms.TextBox tb_sessionscore;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox tb_score3;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox tb_verifyscore;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox tb_randomtext;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.Button btn_fullboat;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox tb_log;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btn_gettoken;
+        private System.Windows.Forms.TextBox tb_attclientsecret;
+        private System.Windows.Forms.TextBox tb_attclientid;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox tb_token_url;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox tb_token_api;
+        private System.Windows.Forms.Button btn_AsynchInvoke;
     }
 }

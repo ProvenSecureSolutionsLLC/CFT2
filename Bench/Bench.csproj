@@ -109,14 +109,17 @@
     <Reference Include="LinqLib">
       <HintPath>..\packages\LinqExtLibrary.1.0.4.2\lib\LinqLib.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Http">
-      <HintPath>..\..\..\betaface\Microsoft.Http.dll</HintPath>
+    <Reference Include="Microsoft.Http, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.Http.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Http.Extensions">
-      <HintPath>..\..\..\betaface\Microsoft.Http.Extensions.dll</HintPath>
+    <Reference Include="Microsoft.Http.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.Http.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ServiceModel.Web">
-      <HintPath>..\..\..\betaface\Microsoft.ServiceModel.Web.dll</HintPath>
+    <Reference Include="Microsoft.ServiceModel.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.ServiceModel.Web.dll</HintPath>
     </Reference>
     <Reference Include="NAudio">
       <HintPath>..\packages\NAudio.1.6\lib\net20\NAudio.dll</HintPath>
@@ -190,6 +193,12 @@
     </Compile>
     <Compile Include="form_KnowledgeMechanism.Designer.cs">
       <DependentUpon>form_KnowledgeMechanism.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_LowLevelATTFace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_LowLevelATTFace.Designer.cs">
+      <DependentUpon>form_LowLevelATTFace.cs</DependentUpon>
     </Compile>
     <Compile Include="form_LowLevelATTVoice.cs">
       <SubType>Form</SubType>
@@ -286,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_KnowledgeMechanism.resx">
       <DependentUpon>form_KnowledgeMechanism.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_LowLevelATTFace.resx">
+      <DependentUpon>form_LowLevelATTFace.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_LowLevelATTVoice.resx">
       <DependentUpon>form_LowLevelATTVoice.cs</DependentUpon>

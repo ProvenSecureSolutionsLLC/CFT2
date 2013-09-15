@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tb_Recognized.Text" xml:space="preserve">
+    <value>Enabling speech to text in your oprating system will speed things along and help prevent sending an ill-recorded sampling of your voice.  AT&amp;T re-checks what you say.  As you speak, the output of speech to text will appear here.  Recording will automatically stop on success.</value>
+  </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
