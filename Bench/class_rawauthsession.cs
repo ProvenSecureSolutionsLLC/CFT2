@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bench
 {
-    class class_rawauthsession
+    public class class_rawauthsession
     {
         //public Guid guid { get; set; } - we don't need this because user and datetime already qualify for this purpose
 
