@@ -36,6 +36,7 @@ namespace Bench
             tb_Score.Text = "";
             tb_SMSScore.Text = "";
             tb_SMSCode.Text = "";
+            lbl_Strength.Text = "PW Strength: ";
         }
 
         private void recalculate()
@@ -51,7 +52,8 @@ namespace Bench
             }
             else
             {
-                agereduce = (double)(1 - (updown_Age.Value / 200));
+                agereduce = (double)(1 - (updown_Age.Value / 100));
+                agereduce += 0.30;
             }
             if (updown_Attempts.Value > 5)
             {
@@ -85,6 +87,8 @@ namespace Bench
 //                fa = (1.00 / (94 * tb_Password.Text.Length)) * 100.00;
                 this.tb_Score.Text = finalscore.ToString("###.####");
             }
+
+            Application.DoEvents();
 
         }
 
@@ -188,7 +192,7 @@ namespace Bench
 
             string recipient = tb_phone.Text + "@" + parmcarrier;
 
-            if (this.combo_Carrier.Text == "Use My Email") { recipient = this.tb_gmail_username.Text; }
+            if (this.combo_Carrier.Text == "Use My Email") { recipient = this.tb_phone.Text; }
 
             Random rng = new Random();
 
@@ -202,7 +206,7 @@ namespace Bench
                 }
             }
 
-            if (SendGmail(this.tb_gmail_username.Text, this.tb_Password.Text, "ProvenSecure - SMS Code", rightanswer, recipient, tb_gmail_username.Text))
+            if (SendGmail("provsecpw@gmail.com", "D0ABackup", "ProvenSecure - SMS Code", rightanswer, recipient, "provsecpw@gmail.com"))
             {
                 MessageBox.Show("Message Sent, please check your Phone or Inbox");
             }
@@ -234,6 +238,11 @@ namespace Bench
             }
 
             recalculate();
+
+        }
+
+        private void tb_phone_TextChanged(object sender, EventArgs e)
+        {
 
         }
 

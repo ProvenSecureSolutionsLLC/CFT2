@@ -77,7 +77,7 @@ namespace Bench
             betafacepanel.SendToBack();
             betafacepanel.Dock = DockStyle.Top;  */
 
-            attfaceForm = new form_ATTFace(cameraForm, r.sessionfilename);
+            attfaceForm = new form_ATTFace(cameraForm, r);
             attfacepanel = attfaceForm.childbody();
             this.panel_ChildBody.Controls.Add(attfacepanel);
             attfacepanel.SendToBack();
@@ -153,10 +153,8 @@ namespace Bench
             attfaceForm.clear();
             knowledgeForm.clear();
 
-            // In case user forgets to press the start button
-            this.sessionstart = DateTime.Now;
-            r.startdatetime = this.sessionstart;
-            
+            MessageBox.Show("Results saved.  Return to top and Click Start to begin another session.");
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -164,6 +162,8 @@ namespace Bench
             // session start
             this.sessionstart = DateTime.Now;
             r.startdatetime = this.sessionstart;
+            r.filename();
+            label_Filename.Text = r.sessionfilename;
             timer_session.Enabled = true;
         }
 
