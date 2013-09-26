@@ -26,7 +26,8 @@ namespace Bench
 
         private form_RMMContainer rmmForm = null;
 
-        private form_LowLevelATTVoice lowlevelattvoiceForm = null;
+        //private form_LowLevelATTVoice lowlevelattvoiceForm = null;
+        private form_LowLevelBetaface lowlevelbetafaceForm = null;
 
         public formMain()
         {
@@ -110,13 +111,13 @@ namespace Bench
             if (p.Name == "panelHeaderAcquire")
             {
                 Boolean b = true;
-                if (cameraForm == null) { b = false; }
+                //if (cameraForm == null) { b = false; }
                 if (audioForm == null) { b = false; }
                 if (systemuserForm == null) { b = false; }
 
                 if (b == false)
                 {
-                    MessageBox.Show("Please visit Settings and be sure to choose a Camera, an Audio Device, and a Select or Create a User from the Main Menu.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("First, please make sure that in 'Settings' an Audio Device is Selected.  Also, make sure a User is Chosen or Created on the User Top Menu.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
@@ -151,11 +152,16 @@ namespace Bench
 
             if (p.Name == "panelHeaderTransform")
             {
-                if (lowlevelattvoiceForm == null)
+                /*if (lowlevelattvoiceForm == null)
                 {
                     lowlevelattvoiceForm = new form_LowLevelATTVoice();
                 }
-                lowlevelattvoiceForm.ShowDialog();
+                lowlevelattvoiceForm.ShowDialog();*/
+                if (lowlevelbetafaceForm == null)
+                {
+                    lowlevelbetafaceForm = new form_LowLevelBetaface();
+                }
+                lowlevelbetafaceForm.ShowDialog();
             }
 
         }
@@ -184,6 +190,11 @@ namespace Bench
 
         private void panelHeaderReview_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void panelHeaderAcquire_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
     }

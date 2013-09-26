@@ -158,6 +158,7 @@
             this.panelHeaderAcquire.Name = "panelHeaderAcquire";
             this.panelHeaderAcquire.Size = new System.Drawing.Size(89, 68);
             this.panelHeaderAcquire.TabIndex = 3;
+            this.panelHeaderAcquire.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeaderAcquire_Paint);
             this.panelHeaderAcquire.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelHeaderAbout_MouseClick);
             this.panelHeaderAcquire.MouseLeave += new System.EventHandler(this.panelHeaderAbout_MouseLeave);
             this.panelHeaderAcquire.MouseHover += new System.EventHandler(this.panelHeaderAbout_MouseHover);

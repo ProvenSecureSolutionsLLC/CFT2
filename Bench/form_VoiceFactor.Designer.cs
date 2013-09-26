@@ -54,7 +54,7 @@
             // tb_Challenge
             // 
             this.tb_Challenge.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tb_Challenge.Location = new System.Drawing.Point(98, 55);
+            this.tb_Challenge.Location = new System.Drawing.Point(112, 55);
             this.tb_Challenge.Multiline = true;
             this.tb_Challenge.Name = "tb_Challenge";
             this.tb_Challenge.ReadOnly = true;
@@ -77,7 +77,7 @@
             // tb_Recognized
             // 
             this.tb_Recognized.BackColor = System.Drawing.SystemColors.Info;
-            this.tb_Recognized.Location = new System.Drawing.Point(98, 184);
+            this.tb_Recognized.Location = new System.Drawing.Point(112, 184);
             this.tb_Recognized.Multiline = true;
             this.tb_Recognized.Name = "tb_Recognized";
             this.tb_Recognized.ReadOnly = true;
@@ -88,7 +88,7 @@
             // 
             // tb_Score
             // 
-            this.tb_Score.Location = new System.Drawing.Point(813, 17);
+            this.tb_Score.Location = new System.Drawing.Point(901, 16);
             this.tb_Score.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Score.Name = "tb_Score";
             this.tb_Score.Size = new System.Drawing.Size(81, 23);
@@ -97,7 +97,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(760, 20);
+            this.label1.Location = new System.Drawing.Point(848, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 17);
@@ -115,7 +115,7 @@
             this.groupBox1.Controls.Add(this.rbSpeech);
             this.groupBox1.Controls.Add(this.rbSilence);
             this.groupBox1.Controls.Add(this.cb_SpeechRecognitionEnabled);
-            this.groupBox1.Location = new System.Drawing.Point(763, 58);
+            this.groupBox1.Location = new System.Drawing.Point(816, 74);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(138, 120);
             this.groupBox1.TabIndex = 24;
@@ -165,7 +165,7 @@
             // 
             // btn_Start
             // 
-            this.btn_Start.Location = new System.Drawing.Point(21, 54);
+            this.btn_Start.Location = new System.Drawing.Point(35, 54);
             this.btn_Start.Name = "btn_Start";
             this.btn_Start.Size = new System.Drawing.Size(75, 116);
             this.btn_Start.TabIndex = 28;
@@ -197,16 +197,16 @@
             // cb_Train
             // 
             this.cb_Train.AutoSize = true;
-            this.cb_Train.Location = new System.Drawing.Point(303, 22);
+            this.cb_Train.Location = new System.Drawing.Point(157, 22);
             this.cb_Train.Name = "cb_Train";
-            this.cb_Train.Size = new System.Drawing.Size(188, 21);
+            this.cb_Train.Size = new System.Drawing.Size(197, 21);
             this.cb_Train.TabIndex = 31;
-            this.cb_Train.Text = "ATT Voice Training Mode";
+            this.cb_Train.Text = "AT&&T Voice Training Mode";
             this.cb_Train.UseVisualStyleBackColor = true;
             // 
             // btn_overrideandgo
             // 
-            this.btn_overrideandgo.Location = new System.Drawing.Point(635, 54);
+            this.btn_overrideandgo.Location = new System.Drawing.Point(649, 54);
             this.btn_overrideandgo.Name = "btn_overrideandgo";
             this.btn_overrideandgo.Size = new System.Drawing.Size(88, 116);
             this.btn_overrideandgo.TabIndex = 30;
@@ -233,7 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 366);
+            this.ClientSize = new System.Drawing.Size(1022, 233);
             this.Controls.Add(this.panel_ChildBody);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
