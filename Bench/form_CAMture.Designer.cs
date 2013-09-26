@@ -33,6 +33,7 @@
             this.tabControl_Child = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_Stop = new System.Windows.Forms.Button();
             this.btn_Capture_Image = new System.Windows.Forms.Button();
             this.cb_vert = new System.Windows.Forms.CheckBox();
             this.cb_horiz = new System.Windows.Forms.CheckBox();
@@ -43,7 +44,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel_ChildBody = new System.Windows.Forms.Panel();
@@ -51,6 +51,7 @@
             this.panel_cameraSetup = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_restart = new System.Windows.Forms.Button();
             this.tabControl_Child.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -100,6 +101,8 @@
             // panel3
             // 
             this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.btn_restart);
+            this.panel3.Controls.Add(this.btn_Stop);
             this.panel3.Controls.Add(this.btn_Capture_Image);
             this.panel3.Controls.Add(this.cb_vert);
             this.panel3.Controls.Add(this.cb_horiz);
@@ -113,6 +116,16 @@
             this.panel3.Size = new System.Drawing.Size(1176, 578);
             this.panel3.TabIndex = 1;
             this.panel3.Leave += new System.EventHandler(this.panel3_Leave);
+            // 
+            // btn_Stop
+            // 
+            this.btn_Stop.Location = new System.Drawing.Point(10, 51);
+            this.btn_Stop.Name = "btn_Stop";
+            this.btn_Stop.Size = new System.Drawing.Size(181, 29);
+            this.btn_Stop.TabIndex = 8;
+            this.btn_Stop.Text = "Stop Camera";
+            this.btn_Stop.UseVisualStyleBackColor = true;
+            this.btn_Stop.Click += new System.EventHandler(this.btn_Stop_Click);
             // 
             // btn_Capture_Image
             // 
@@ -174,7 +187,7 @@
             this.panel_camera_image.AutoScroll = true;
             this.panel_camera_image.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_camera_image.Controls.Add(this.pictureBox1);
-            this.panel_camera_image.Location = new System.Drawing.Point(13, 59);
+            this.panel_camera_image.Location = new System.Drawing.Point(10, 124);
             this.panel_camera_image.Margin = new System.Windows.Forms.Padding(4);
             this.panel_camera_image.Name = "panel_camera_image";
             this.panel_camera_image.Size = new System.Drawing.Size(592, 394);
@@ -198,7 +211,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(593, 430);
+            this.tabPage2.Size = new System.Drawing.Size(1184, 586);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = " Image Library ";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -211,7 +224,7 @@
             this.listView1.Location = new System.Drawing.Point(4, 4);
             this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(585, 422);
+            this.listView1.Size = new System.Drawing.Size(1176, 578);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -220,12 +233,6 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(120, 116);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // timer2
             // 
@@ -282,6 +289,16 @@
             this.panel2.Size = new System.Drawing.Size(39, 680);
             this.panel2.TabIndex = 6;
             // 
+            // btn_restart
+            // 
+            this.btn_restart.Location = new System.Drawing.Point(10, 86);
+            this.btn_restart.Name = "btn_restart";
+            this.btn_restart.Size = new System.Drawing.Size(181, 29);
+            this.btn_restart.TabIndex = 9;
+            this.btn_restart.Text = "Restart Camera";
+            this.btn_restart.UseVisualStyleBackColor = true;
+            this.btn_restart.Click += new System.EventHandler(this.btn_restart_Click);
+            // 
             // formCAMture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -323,7 +340,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox cb_vert;
         private System.Windows.Forms.CheckBox cb_horiz;
         private System.Windows.Forms.Timer timer2;
@@ -335,6 +351,8 @@
         internal System.Windows.Forms.Panel panel_cameraSetup;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_Stop;
+        private System.Windows.Forms.Button btn_restart;
     }
 }
 

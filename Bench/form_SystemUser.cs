@@ -105,9 +105,6 @@ namespace Bench
             {
                 combo_systemuser.SelectedIndex = combo_systemuser.FindStringExact(repickme, -1);
             }
-
-            tb_NewUser.Text = "";
-
         }
 
         public form_SystemUser()
@@ -117,13 +114,27 @@ namespace Bench
             refresh();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void createnewuser()
         {
             string newdir = "";
 
-            if (tb_NewUser.Text.Trim() != "") {
+            string strnewuser = "";
+            form_Question q = new form_Question();
+            q.username = "";
+            if (q.ShowDialog() == DialogResult.OK)
+            {
+                strnewuser = q.username;
+            }
+            else
+            {
+                return;
+            }
 
-                newdir = startFolder + "\\" + tb_NewUser.Text;
+            strnewuser = strnewuser.Trim();
+
+            if (strnewuser != "") {
+
+                newdir = startFolder + "\\" + strnewuser;
 
                 bool isExists = System.IO.Directory.Exists(newdir);
 
@@ -138,19 +149,29 @@ namespace Bench
                     else
                     {
                         MessageBox.Show(newdir,"Already Exists!");
+                        return;
                     }
                 }
                 catch
                 {
                     MessageBox.Show("Failed to create: " + newdir);
-                    tb_NewUser.Text = "";
                 }
 
-
-                combo_systemuser.Text = tb_NewUser.Text;
-
+                combo_systemuser.Text = strnewuser;
                 refresh();
+
+                MessageBox.Show("User: " + strnewuser + " was added successfully.");
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            createnewuser();
+        }
+
+        private void combo_systemuser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Thank you.  With the user now set, you may proceed additional features.");
         }
     }
 }

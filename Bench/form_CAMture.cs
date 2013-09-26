@@ -78,11 +78,10 @@ namespace Bench
 
         }
 
-
+/*
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.timer1.Enabled = false;
-            /*
             try
             {
                 VCD_Collection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -116,11 +115,28 @@ namespace Bench
 
             
             VCD.NewFrame += new NewFrameEventHandler(VCD_NewFrame);
-            VCD.Start(); */
+            VCD.Start(); 
+        }
+ */
+
+
+        public void StartupCam()
+        {
+            if (VCD != null && !VCD.IsRunning)
+            {
+                //MessageBox.Show("Shutdown Cam");
+                try
+                {
+                    VCD.Start();
+                }
+                catch
+                {
+                    MessageBox.Show("Exception while shutdown cam");
+                }
+            }
         }
 
-
-        private void ShutdownCam()
+        public void ShutdownCam()
         {
             if (VCD != null && VCD.IsRunning)
             {
@@ -152,7 +168,6 @@ namespace Bench
 
         private void Exit()
         {
-            timer1.Enabled = false;
             timer2.Enabled = false;
 
             ShutdownCam();
@@ -173,7 +188,7 @@ namespace Bench
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            //timer2.Enabled = false;
+            timer2.Enabled = false;
 
             if (image != null)
             {
@@ -199,34 +214,33 @@ namespace Bench
         }
 
 
-        private void btn_ChooseCamera_Click(object sender, EventArgs e)
+        public void choosecamera()
         {
             timer2.Enabled = false;
 
-            if ((VCD != null) && (!VCD.IsRunning))
-            {
-                VCD.Start();
+            ShutdownCam();
 
-                btn_ChooseCamera.Text = "Choose Camera";
-               
+            Application.DoEvents();
+
+            VideoCaptureDeviceForm f = new VideoCaptureDeviceForm();
+            f.ShowDialog();
+            if (f.DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                VCD = f.VideoDevice;
+                VCD.NewFrame += new NewFrameEventHandler(VCD_NewFrame);
+                //VCD.Start();
+                StartupCam();
+
+                Application.DoEvents();
+
                 timer2.Enabled = true;
             }
-            else
-            {
+        }
 
-                ShutdownCam();
 
-                VideoCaptureDeviceForm f = new VideoCaptureDeviceForm();
-                f.ShowDialog();
-                if (f.DialogResult == System.Windows.Forms.DialogResult.OK)
-                {
-                    VCD = f.VideoDevice;
-                    VCD.NewFrame += new NewFrameEventHandler(VCD_NewFrame);
-                    VCD.Start();
-
-                    timer2.Enabled = true;
-                }
-            }
+        private void btn_ChooseCamera_Click(object sender, EventArgs e)
+        {
+            choosecamera();
         }
 
 
@@ -344,7 +358,7 @@ namespace Bench
                 {
                     ShutdownCam();
                     timer2.Enabled = false;
-                    btn_ChooseCamera.Text = "Restart";
+                    //btn_ChooseCamera.Text = "Restart";
                 }
                 finally
                 {
@@ -355,6 +369,16 @@ namespace Bench
         private void button1_Click(object sender, EventArgs e)
         {
             Exit();
+        }
+
+        private void btn_Stop_Click(object sender, EventArgs e)
+        {
+            ShutdownCam();
+        }
+
+        private void btn_restart_Click(object sender, EventArgs e)
+        {
+            StartupCam();
         }
 
         
