@@ -1,0 +1,29 @@
+1.       White paper on MrE effectiveness          (this one is complete)
+
+2.       RMM Algorithm
+
+3.       RMM API
+
+
+4.       List of specific authenticators to be built into “bench” MFA system
+
+The "bench" is a semi-functional authentication mechanism.  Its purpose is to acquire authentication event data and 'train' a statistical model, and to then allow further manipulation of the data, certain transformations, and the invocation of further processing in aid of the project goals, which are primarily to explore the statistical essence of employing multiple factors together, what does it really mean, for example is face+voice "better than" SMS + password, or what combinations are "how strong".
+
+The Bench primarily acquires Authentication Sessions, multiple factors, all at once, involving:  Password, SMS Token, AT&T Voice Recognition, Betaface Facial Recognition, and a Knowledge Factor.
+
+Several of the items are fundamentally True/False, did you login or not.  Some of the factors are very highly statistical, "how sure are you about this voice or face..."  Some effort has been made to employ plausible real-world modifiers to ordinarily true/false authentication events like password...  true or false + how old is it, for example.
+
+None of the "authentication mechanisms" that are built-in to the bench or that the bench calls out to are complete commercial products 100% off the shelf ready to authenticate users.   Nevertheless, they all adequately represent the primary aspects of authentication that we are interested in, and more importantly for our purposes, all together at once.
+
+5.       List of test conditions that will exercise “bench” MFA system
+
+We have essentially 3 sets of test data from 3 different users on three different machines, each with a different camera and microphone, and minor variations in the Windows Operating System versions and hardware capabilities.
+
+This data "trains" the statistical engine about each user, and we get a solid measure of what a real user looks like, and, what does an imposter look like, in terms of the various authentication mechanisms employed.  The "bench" is representative of a number of common authentication mechanisms and employs some state of the art methods to recognize voice and face.  That said, the "way" of the bench is an example of how such things combine for statistical control and risk mitigation.
+
+"Test Conditions" as a project deliverable, are more readily defined as "some examples of the trained data in action, vs. an example set of real world scenarios".
+
+
+6.       MFA “bench” system and RMM prototype tool
+
+7.       Final report on RMM effectiveness

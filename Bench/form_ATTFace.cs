@@ -154,7 +154,15 @@ namespace Bench
                 }
             }
 
+            string check = tb_betaface_Score.Text;
+            if (check == "1")
+            {
+                MessageBox.Show("Warning: Perfect Score\r\nYou might want to take more pictures varying conditions to get a more reasonable score.");
+            }
+
             this.cameraForm.ShutdownCam();
+
+            MessageBox.Show("Done.");
         }
 
         private void form_ATTFace_Load(object sender, EventArgs e)

@@ -9,12 +9,38 @@ namespace Bench
     class class_gather_riskcards
     {
 
+        private static string basedir = "";
+        private static string rdir = "";
+
+        private static void recalc()
+        {
+            System.Reflection.Assembly a = System.Reflection.Assembly.GetEntryAssembly();
+            basedir = System.IO.Path.GetDirectoryName(a.Location);
+
+            rdir = basedir + "\\RData";
+
+            bool isExists = System.IO.Directory.Exists(rdir);
+
+            try
+            {
+                if (!isExists)
+                    System.IO.Directory.CreateDirectory(rdir);
+            }
+            catch
+            {
+             //   MessageBox.Show("Unable to create folder: " + rdir, "Process Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
         // RiskCards started life as individual text files
         // We use linq to bring them into queryable list forms
         // ---------------------------------------------------
             public static List<riskcard> doit()
             {
-                string startFolder = @"C:\vs2013\Projects\ProvenSecure_DARPA_CFT_2013\ProvenSecure_DARPA_CFT_2013\bin\Debug";
+                recalc();
+
+                string startFolder = basedir; // @"C:\vs2013\Projects\ProvenSecure_DARPA_CFT_2013\ProvenSecure_DARPA_CFT_2013\bin\Debug";
 
                 // Take a snapshot of the file system.
                 System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(startFolder);
@@ -46,7 +72,9 @@ namespace Bench
         // Make IEnumerable<riskcard>
             public static IEnumerable<riskcard> GET_IEnumerable_AllRiskCards()
             {
-                string startFolder = @"C:\vs2013\Projects\ProvenSecure_DARPA_CFT_2013\ProvenSecure_DARPA_CFT_2013\bin\Debug";
+                recalc(); 
+
+                string startFolder = basedir; // @"C:\vs2013\Projects\ProvenSecure_DARPA_CFT_2013\ProvenSecure_DARPA_CFT_2013\bin\Debug";
 
                 // Take a snapshot of the file system.
                 System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(startFolder);

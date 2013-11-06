@@ -121,16 +121,16 @@ namespace Bench
                 hls.addPWScore(session.password_score);
 
                 hls.addATTVoiceScore(session.attvoice_score1);
-                hls.addATTVoiceScore(session.attvoice_score2);
-                hls.addATTVoiceScore(session.attvoice_score3);
+                //hls.addATTVoiceScore(session.attvoice_score2);
+                //hls.addATTVoiceScore(session.attvoice_score3);
 
                 hls.addATTFaceScore(session.attface_score1);
-                hls.addATTFaceScore(session.attface_score2);
-                hls.addATTFaceScore(session.attface_score3);
+                //hls.addATTFaceScore(session.attface_score2);
+                //hls.addATTFaceScore(session.attface_score3);
 
                 hls.addBetafaceScore(session.betaface_score1);
-                hls.addBetafaceScore(session.betaface_score2);
-                hls.addBetafaceScore(session.betaface_score3);
+                //hls.addBetafaceScore(session.betaface_score2);
+                //hls.addBetafaceScore(session.betaface_score3);
 
                 hls.addKnowledgeScore(session.knowledge_score);
 

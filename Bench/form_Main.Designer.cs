@@ -103,6 +103,7 @@
             this.panelHeaderTransform.Name = "panelHeaderTransform";
             this.panelHeaderTransform.Size = new System.Drawing.Size(89, 68);
             this.panelHeaderTransform.TabIndex = 5;
+            this.panelHeaderTransform.Visible = false;
             this.panelHeaderTransform.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelHeaderAbout_MouseClick);
             this.panelHeaderTransform.MouseLeave += new System.EventHandler(this.panelHeaderAbout_MouseLeave);
             this.panelHeaderTransform.MouseHover += new System.EventHandler(this.panelHeaderAbout_MouseHover);
@@ -118,6 +119,7 @@
             this.ll_Transform.TabIndex = 4;
             this.ll_Transform.TabStop = true;
             this.ll_Transform.Text = "TestHook";
+            this.ll_Transform.Visible = false;
             this.ll_Transform.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ll_About_MouseClick);
             this.ll_Transform.MouseHover += new System.EventHandler(this.ll_About_MouseHover);
             // 
@@ -213,6 +215,7 @@
             this.panelHeaderAbout.Name = "panelHeaderAbout";
             this.panelHeaderAbout.Size = new System.Drawing.Size(89, 68);
             this.panelHeaderAbout.TabIndex = 1;
+            this.panelHeaderAbout.Visible = false;
             this.panelHeaderAbout.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelHeaderAbout_MouseClick);
             this.panelHeaderAbout.MouseLeave += new System.EventHandler(this.panelHeaderAbout_MouseLeave);
             this.panelHeaderAbout.MouseHover += new System.EventHandler(this.panelHeaderAbout_MouseHover);
@@ -228,6 +231,7 @@
             this.ll_About.TabIndex = 0;
             this.ll_About.TabStop = true;
             this.ll_About.Text = "About";
+            this.ll_About.Visible = false;
             this.ll_About.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ll_About_MouseClick);
             this.ll_About.MouseHover += new System.EventHandler(this.ll_About_MouseHover);
             // 

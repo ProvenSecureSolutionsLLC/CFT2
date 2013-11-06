@@ -235,7 +235,7 @@ namespace Bench
             });
 
             int cnt = 0;
-            while ((!done) && (cnt < 60))
+            while ((!done) && (cnt < 45))
             {
                 Thread.Sleep(500);
                 cnt++;
@@ -289,7 +289,7 @@ namespace Bench
             });
 
             int cnt = 0;
-            while ((!done) && (cnt < 60))
+            while ((!done) && (cnt < 45))
             {
                 Thread.Sleep(500);
                 cnt++;
@@ -342,7 +342,7 @@ namespace Bench
             });
 
             int cnt = 0;
-            while ((!done) && (cnt < 60))
+            while ((!done) && (cnt < 45))
             {
                 Thread.Sleep(500);
                 cnt++;
@@ -408,7 +408,7 @@ namespace Bench
             });
 
             int cnt = 0;
-            while ((!done) && (cnt < 60))
+            while ((!done) && (cnt < 45))
             {
                 Thread.Sleep(500);
                 cnt++;
@@ -432,6 +432,7 @@ namespace Bench
             request.Method = WebRequestMethods.Http.Get;
             request.Credentials = CredentialCache.DefaultCredentials;
 
+            check_probability = "";
 
             string output = "";
             Boolean done = false;
@@ -462,7 +463,7 @@ namespace Bench
             });
 
             int cnt = 0;
-            while ((!done) && (cnt < 60))
+            while ((!done) && (cnt < 45))
             {
                 Thread.Sleep(500);
                 cnt++;
@@ -489,6 +490,8 @@ namespace Bench
             tb_verify_url.Text = tb_Host.Text + tb_verify_api.Text + "?text=" + parmtextsaid + "&sessionId=" + parmsessionid + "&access_token=" + tb_Token.Text;
 
             tb_upload_file.Text = parmfilename;
+
+            verify_probability = "";
 
             string whatiswrong = tb_verify_url.Text;   // does not like taking text straight out of a textbox.Text !!! go figure...
 
@@ -538,9 +541,11 @@ namespace Bench
                 done = true;
             });
 
+
             int cnt = 0;
-            while ((!done) && (cnt < 60))
+            while ((!done) && (cnt < 45))
             {
+                //Application.DoEvents();
                 Thread.Sleep(500);
                 cnt++;
             }
@@ -571,6 +576,7 @@ namespace Bench
             dataStream.Write(byteArray, 0, byteArray.Length);
             dataStream.Close();
 
+            tb_sessionscore.Text = "";
             string output = "";
             Boolean done = false;
             string score1 = "";
@@ -625,7 +631,7 @@ namespace Bench
             });
 
             int cnt = 0;
-            while ((!done) && (cnt < 60))
+            while ((!done) && (cnt < 45))
             {
                 Thread.Sleep(500);
                 cnt++;
@@ -663,6 +669,8 @@ namespace Bench
             string whatiswrong = tb_train_url.Text;
             tb_output.Text = "";
             Application.DoEvents();
+
+            verify_probability = "";
 
             WebRequest request = WebRequest.Create(whatiswrong);
             request.Method = WebRequestMethods.Http.Post;
@@ -718,7 +726,7 @@ namespace Bench
             });
 
             int cnt = 0;
-            while ((!done) && (cnt < 60))
+            while ((!done) && (cnt < 45))
             {
                 Thread.Sleep(500);
                 cnt++;

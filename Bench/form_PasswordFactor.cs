@@ -229,12 +229,12 @@ namespace Bench
                     smsscore = 50.00;  // less value if it is not a more for sure "separate channel"
                 }
 
-                tb_SMSScore.Text = smsscore.ToString("#.####");
+                tb_SMSScore.Text = smsscore.ToString("###.####");
             }
             else
             {
                 smsscore = 0.00;
-                tb_SMSScore.Text = smsscore.ToString("#.####");
+                tb_SMSScore.Text = smsscore.ToString("###.####");
             }
 
             recalculate();

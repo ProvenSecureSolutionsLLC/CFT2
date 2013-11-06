@@ -29,7 +29,7 @@ namespace Bench
                     System.Reflection.Assembly a = System.Reflection.Assembly.GetEntryAssembly();
                     string baseDir = System.IO.Path.GetDirectoryName(a.Location);
                     string filename = baseDir + "\\about\\templateabout.html";
-                    this.webBrowser1.Navigate(filename);
+                    //this.webBrowser1.Navigate(filename); - removed due to Paul's configuration issues
                 }
                 finally
                 {

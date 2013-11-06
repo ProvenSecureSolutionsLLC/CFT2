@@ -99,7 +99,7 @@ namespace Bench
         public void log(string s)
         {
             logstring += s + "\r\n";
-            tb_response.AppendText(s + "\r\n");
+            //tb_response.AppendText(s + "\r\n");
         }
 
 
@@ -428,27 +428,28 @@ namespace Bench
 
                         HttpContent compareResultRequest_body = HttpContentExtensions.CreateXmlSerializable(compareResultRequest);
                         System.Net.ServicePointManager.Expect100Continue = false;
-
-                        using (HttpResponseMessage response = client.Post("GetRecognizeResult", compareResultRequest_body))
+                        try
                         {
-                            // Throws an exception if not OK 
-                            response.EnsureStatusIsSuccessful();
-
-                            response.Content.LoadIntoBuffer();
-                            string str = response.Content.ReadAsString();
-
-                            BetafaceRecognizeResponse ret = response.Content.ReadAsXmlSerializable<BetafaceRecognizeResponse>();
-                            if (ret.int_response < 0)
+                            using (HttpResponseMessage response = client.Post("GetRecognizeResult", compareResultRequest_body))
                             {
-                                log("error " + ret.int_response + " " + ret.string_response);
-                                break;
-                            }
-                            else if (ret.int_response == 0)
-                            {
-                                //string strRes = "recognize_" + recognize_request_id.ToString() + ".txt";
-                                //log("writing result to " + strRes);
-                                //using (StreamWriter sw = new StreamWriter(strRes))
-                                //{
+                                // Throws an exception if not OK 
+                                response.EnsureStatusIsSuccessful();
+
+                                response.Content.LoadIntoBuffer();
+                                string str = response.Content.ReadAsString();
+
+                                BetafaceRecognizeResponse ret = response.Content.ReadAsXmlSerializable<BetafaceRecognizeResponse>();
+                                if (ret.int_response < 0)
+                                {
+                                    log("error " + ret.int_response + " " + ret.string_response);
+                                    break;
+                                }
+                                else if (ret.int_response == 0)
+                                {
+                                    //string strRes = "recognize_" + recognize_request_id.ToString() + ".txt";
+                                    //log("writing result to " + strRes);
+                                    //using (StreamWriter sw = new StreamWriter(strRes))
+                                    //{
                                     log("Request");
                                     foreach (string g in recognizeRequest.faces_uids)
                                     {
@@ -470,12 +471,18 @@ namespace Bench
                                             log("score: " + pmi.confidence); // + " " + pmi.is_match + " " + pmi.face_uid);
                                         }
                                     }
-                                //}
+                                    //}
 
-                                //log(str);
-                                break;
+                                    //log(str);
+                                    break;
+                                };
                             };
-                        };
+                        }
+                        catch (Exception e)
+                        {
+                            MessageBox.Show("Exception getting HTTP Response: "+e.Message);
+                        }
+                    
                         Thread.Sleep(500);
                     };
                 }
@@ -569,6 +576,10 @@ namespace Bench
             {
                 System.IO.Directory.SetCurrentDirectory(popdir);
             }
+
+
+
+
 
             if (faceuidfilename != "") { return true; }
             else { return false; }
@@ -708,6 +719,7 @@ namespace Bench
             clearlog(); //.Text = "";
             Application.DoEvents();
             upload(tb_selectedfile.Text);
+            tb_response.Text = this.logstring;
         }
 
         // recognize a faceuid
@@ -716,6 +728,7 @@ namespace Bench
             clearlog(); //.Text = "";
             Application.DoEvents();
             recognize(tb_selectedfile.Text);
+            tb_response.Text = this.logstring;
         }
 
 
@@ -787,7 +800,7 @@ namespace Bench
 
             doit(parms);  // recognize
 
-
+            tb_response.Text = this.logstring;
         }
 
 
@@ -825,6 +838,27 @@ namespace Bench
                 log(s); // tb_response.AppendText(s + "\r\n");
             }
 
+            tb_response.Text = this.logstring;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string basedir = tb_googledrive.Text;
+
+            StreamWriter sw = new StreamWriter(basedir + @"\testfile.written");
+            sw.WriteLine("Hello World");
+            sw.Close();
+
+            StreamReader sr = new StreamReader(basedir + @"\testfile.written");
+            string s = sr.ReadToEnd();
+            sr.Close();
+
+            sw = new StreamWriter(basedir + @"\testfile.read");
+            sw.WriteLine(s);
+            sw.Close();
+
+            tb_response.Text = this.logstring; 
+            MessageBox.Show("Done");
         }
 
 

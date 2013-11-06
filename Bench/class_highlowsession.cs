@@ -46,7 +46,14 @@ namespace Bench
             Double retval = 0.00;
             foreach (Double d in list)
             {
-                retval += d;
+                if (double.IsNaN(d))
+                {
+                    // do nothing
+                } else 
+                if (d != 0.00)
+                {
+                    retval += d;
+                }
             }
             return retval;
         }
@@ -151,7 +158,7 @@ namespace Bench
         {
             get
             {
-                return sum(_pwscores);
+                return sum(_attvoicescores);
             }
             //set;
         }
@@ -171,7 +178,7 @@ namespace Bench
             }
             //set; 
         }
-        public int count
+        public int _attvoicecount
         {
             get { return _attvoicescores.Count; }
             //set;
@@ -379,7 +386,8 @@ namespace Bench
         public void addPWScore(Double parmScore)
         {
             // Let's just collect a list of doubles
-            if ((parmScore != 0.00) && (parmScore != Double.NaN))
+            if (double.IsNaN(parmScore)) { } else
+            if (parmScore != 0.00)
             {
                 _pwscores.Add(parmScore);
             }
@@ -387,42 +395,52 @@ namespace Bench
 
         public void addATTVoiceScore(Double parmScore)
         {
-            if ((parmScore != 0.00) && (parmScore != Double.NaN))
-            {
-                _attvoicescores.Add(parmScore);
-            }
+            if (double.IsNaN(parmScore)) { }
+            else
+                if (parmScore != 0.00)
+                {
+                    _attvoicescores.Add(parmScore);
+                }
         }
 
         public void addATTFaceScore(Double parmScore)
         {
-            if ((parmScore != 0.00) && (parmScore != Double.NaN))
-            {
-                _attfacescores.Add(parmScore);
-            }
+            if (double.IsNaN(parmScore)) { }
+            else
+                if (parmScore != 0.00)
+                {
+                    _attfacescores.Add(parmScore);
+                }
         }
 
         public void addBetafaceScore(Double parmScore)
         {
-            if ((parmScore != 0.00) && (parmScore != Double.NaN))
-            {
-                _betafacescores.Add(parmScore);
-            }
+            if (double.IsNaN(parmScore)) { }
+            else
+                if (parmScore != 0.00)
+                {
+                    _betafacescores.Add(parmScore);
+                }
         }
 
         public void addKnowledgeScore(Double parmScore)
         {
-            if ((parmScore != 0.00) && (parmScore != Double.NaN))
-            {
-                _knowledgescores.Add(parmScore);
-            }
+            if (double.IsNaN(parmScore)) { }
+            else
+                if (parmScore != 0.00)
+                {
+                    _knowledgescores.Add(parmScore);
+                }
         }
 
         public void addSMSScore(Double parmScore)
         {
-            if ((parmScore != 0.00) && (parmScore != Double.NaN))
-            {
-                _smsscores.Add(parmScore);
-            }
+            if (double.IsNaN(parmScore)) { }
+            else
+                if (parmScore != 0.00)
+                {
+                    _smsscores.Add(parmScore);
+                }
         }
 
         public List<double> TestScores = new List<Double>();

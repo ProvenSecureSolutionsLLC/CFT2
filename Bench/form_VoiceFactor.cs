@@ -313,7 +313,7 @@ namespace Bench
 
                             //msgboxdebug("Debug: Train() Returns: " + lowvoiceform.getrawoutput());
 
-                            DialogResult dr = MessageBox.Show("Finalize Training Now ?  Click 'No' if you are still training.", "Voice Sample Collected", MessageBoxButtons.YesNo);
+                            DialogResult dr = MessageBox.Show("Finalize This Training Event Now ?  Click 'No' to try to get a better score.", "Voice Sample Collected", MessageBoxButtons.YesNo);
                             if (dr == System.Windows.Forms.DialogResult.Yes)
                             {
                                 lowvoiceform.Finalize(attvoicesession);
@@ -329,6 +329,14 @@ namespace Bench
                             //lbl_TextVerified.Text = "Text Verified Audio: has not passed";
                         }
                     }
+                    else
+                    {
+                        if (tscore == "")
+                        {
+                            MessageBox.Show("No result.  Please try again.");
+                        }
+                    }
+                
 
                 }
                 else
@@ -337,7 +345,7 @@ namespace Bench
 
                     //msgboxdebug("Debug: Verify() Returns: " + lowvoiceform.getrawoutput());
                     string jj = lowvoiceform.getrawoutput();
-                    
+
                     if ((tscore != null) && (tscore != ""))
                     {
                         if (!tscore.Contains("ERROR:"))
@@ -346,12 +354,19 @@ namespace Bench
                             this.voicescore = Convert.ToDouble(tscore);
                             Application.DoEvents();
 
-                            DialogResult dr = MessageBox.Show("Finalize now with this score ?  Click 'No' to keep trying.", "Voice Sample Collected", MessageBoxButtons.YesNo);
+                            DialogResult dr = MessageBox.Show("Finalize now with this score ?  Click 'No' to try to score better.", "Voice Sample Collected", MessageBoxButtons.YesNo);
                             if (dr == System.Windows.Forms.DialogResult.Yes)
                             {
                                 lowvoiceform.Finalize(attvoicesession);
                                 attvoicesession = "";
                             }
+                        }
+                    }
+                    else
+                    {
+                        if (tscore == "")
+                        {
+                            MessageBox.Show("No result. Please try again.");
                         }
                     }
                 }

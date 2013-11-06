@@ -23,6 +23,8 @@ namespace Bench
         // This is TestUser x, we know this
         // Unless testuser x is implementing an Imposter record deliberately [x] Imposter
 
+        private double _smsscore = 0.00;
+
         public class_rawauthsession()
         {
             user = "Default";
@@ -117,7 +119,14 @@ namespace Bench
         public Double knowledge_score { get; set; }
         // OPTIONAL - keep track of running mean
         // not now public int knowledge_timeelapsed { get; set; } // seconds
-        public Double sms_score { get; set; }
+
+        // *** Something went awry in acquisition.  
+        // The two possible values for "real person" - registration / training, are 50 or 100
+        // or, 0.5 and 1.0    Zero is failed to enter the right value which during training is technically not an option
+        // 0.5 means it was an "sms message to an email account"
+        // 1.0 means it was an sms message to an actual cell phone
+        // Because the acquisition went awry, we're going to return 0.5 for the remainder of CFT2
+        public Double sms_score { get { return 0.5; } set { this._smsscore = value; } }
         // OPTIONAL - keep track of running mean
         // not now public int sms_timeelapsed { get; set; } // seconds
 
